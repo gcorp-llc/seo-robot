@@ -12,6 +12,9 @@ CAPTCHA_MAX_WAIT = int(os.getenv('CAPTCHA_MAX_WAIT', '120'))
 CUSTOM_USER_AGENTS = [
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15",
     "Mozilla/5.0 (Linux; Android 14; SM-S918B) AppleWebKit/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+    "Mozilla/5.0 (Linux; Android 11)",
 ]
 
 DEVICES = [
@@ -34,7 +37,7 @@ SEARCH_ENGINES_ENABLED = {
     "DuckDuckGo": True,
     "Yandex": True,
     "Yahoo": True,
-    "Brave": True,
-    "Ecosia": True,
-    "Startpage": True
+    "Brave": False,
+    "Ecosia": False,
+    "Startpage": False
 }

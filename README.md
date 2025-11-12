@@ -23,7 +23,7 @@
 
 1. کلون مخزن و ورود به پوشه پروژه:
     ```bash
-    git clone <آدرس-مخزن>
+    git clone https://github.com/gcorp-llc/seo-robot.git
     cd seo-bot
     ```
 

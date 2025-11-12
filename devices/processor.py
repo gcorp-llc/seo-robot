@@ -38,6 +38,7 @@ async def process_device(
         **device,
         locale='fa-IR',
         timezone_id='Asia/Tehran',
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای HTTPS
         extra_http_headers={
             'Accept-Language': 'fa-IR,fa;q=0.9,en-US;q=0.8,en;q=0.7',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',

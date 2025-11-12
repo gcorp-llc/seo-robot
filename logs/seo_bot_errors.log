@@ -39761,3 +39761,738 @@ Call log:
 Call log:
   - navigating to "https://gcorp.cc/articles", waiting until "domcontentloaded"
 
+2025-11-12 01:25:18 - SEOBot - ERROR - ❌ هیچ پروکسی فعالی یافت نشد!
+2025-11-12 01:32:47 - SEOBot - ERROR - ❌ هیچ پروکسی فعالی یافت نشد!
+2025-11-12 01:34:08 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:34:19 - SEOBot - ERROR -    ❌ خطا در Bing: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30
+Call log:
+  - navigating to "https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30", waiting until "domcontentloaded"
+
+2025-11-12 01:34:22 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_ABORTED at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:34:25 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:34:29 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:34:29 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:34:31 - SEOBot - ERROR -    ❌ خطا در Bing: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30
+Call log:
+  - navigating to "https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30", waiting until "domcontentloaded"
+
+2025-11-12 01:34:31 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:34:39 - SEOBot - ERROR - ❌ خطا در حل کپچا برای Yandex: name 'asyncio' is not defined
+2025-11-12 01:34:40 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_CONNECTION_CLOSED at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:35:20 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/", waiting until "domcontentloaded"
+
+2025-11-12 01:35:27 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/", waiting until "domcontentloaded"
+
+2025-11-12 01:35:46 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/: name 'asyncio' is not defined
+2025-11-12 01:37:06 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:37:19 - SEOBot - ERROR - ❌ خطا در حل کپچا برای Bing: name 'asyncio' is not defined
+2025-11-12 01:37:22 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:37:29 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:37:34 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:37:39 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:37:45 - SEOBot - ERROR - ❌ خطا در حل کپچا برای Bing: name 'asyncio' is not defined
+2025-11-12 01:37:50 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:37:54 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:37:59 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:38:10 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%b2%db%8c%d8%a8%d8%a7%db%8c%db%8c-%d9%86%da%86%d8%b1%d8%a7%d9%84-natural-beauty-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d8%a7%db%8c-%d8%af%d8%b3%d8%aa%db%8c%d8%a7%d8%a8%db%8c-%d8%a8%d9%87-%d9%86%d8%aa/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d8%b2%db%8c%d8%a8%d8%a7%db%8c%db%8c-%d9%86%da%86%d8%b1%d8%a7%d9%84-natural-beauty-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d8%a7%db%8c-%d8%af%d8%b3%d8%aa%db%8c%d8%a7%d8%a8%db%8c-%d8%a8%d9%87-%d9%86%d8%aa/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%b2%db%8c%d8%a8%d8%a7%db%8c%db%8c-%d9%86%da%86%d8%b1%d8%a7%d9%84-natural-beauty-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d8%a7%db%8c-%d8%af%d8%b3%d8%aa%db%8c%d8%a7%d8%a8%db%8c-%d8%a8%d9%87-%d9%86%d8%aa/", waiting until "domcontentloaded"
+
+2025-11-12 01:38:22 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/", waiting until "domcontentloaded"
+
+2025-11-12 01:38:34 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/
+Call log:
+  - navigating to "https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/", waiting until "domcontentloaded"
+
+2025-11-12 01:40:15 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:40:21 - SEOBot - ERROR -    ❌ خطا در Bing: name 'asyncio' is not defined
+2025-11-12 01:40:24 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:40:30 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:40:35 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:40:41 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:40:47 - SEOBot - ERROR -    ❌ خطا در Bing: name 'asyncio' is not defined
+2025-11-12 01:40:53 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:40:58 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:41:04 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:41:14 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%b2%db%8c%d8%a8%d8%a7%db%8c%db%8c-%d9%86%da%86%d8%b1%d8%a7%d9%84-natural-beauty-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d8%a7%db%8c-%d8%af%d8%b3%d8%aa%db%8c%d8%a7%d8%a8%db%8c-%d8%a8%d9%87-%d9%86%d8%aa/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d8%b2%db%8c%d8%a8%d8%a7%db%8c%db%8c-%d9%86%da%86%d8%b1%d8%a7%d9%84-natural-beauty-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d8%a7%db%8c-%d8%af%d8%b3%d8%aa%db%8c%d8%a7%d8%a8%db%8c-%d8%a8%d9%87-%d9%86%d8%aa/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%b2%db%8c%d8%a8%d8%a7%db%8c%db%8c-%d9%86%da%86%d8%b1%d8%a7%d9%84-natural-beauty-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d8%a7%db%8c-%d8%af%d8%b3%d8%aa%db%8c%d8%a7%d8%a8%db%8c-%d8%a8%d9%87-%d9%86%d8%aa/", waiting until "domcontentloaded"
+
+2025-11-12 01:41:29 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/", waiting until "domcontentloaded"
+
+2025-11-12 01:41:39 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/: Page.goto: net::ERR_ABORTED at https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/", waiting until "domcontentloaded"
+
+2025-11-12 01:41:56 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:42:03 - SEOBot - ERROR - ❌ خطا در حل کپچا برای Bing: name 'asyncio' is not defined
+2025-11-12 01:42:06 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:42:11 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:42:15 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_ABORTED at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:42:21 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:42:28 - SEOBot - ERROR - ❌ خطا در حل کپچا برای Bing: name 'asyncio' is not defined
+2025-11-12 01:42:33 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:42:38 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_EMPTY_RESPONSE at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:42:41 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_ABORTED at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:42:56 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/
+Call log:
+  - navigating to "https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/", waiting until "domcontentloaded"
+
+2025-11-12 01:43:09 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/", waiting until "domcontentloaded"
+
+2025-11-12 01:43:21 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/", waiting until "domcontentloaded"
+
+2025-11-12 01:44:17 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_TIMED_OUT at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:44:18 - SEOBot - ERROR -    ❌ خطا در Bing: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30
+Call log:
+  - navigating to "https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30", waiting until "domcontentloaded"
+
+2025-11-12 01:44:20 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:44:51 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_TIMED_OUT at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:44:56 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:45:00 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:45:07 - SEOBot - ERROR -    ❌ خطا در Bing: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30
+Call log:
+  - navigating to "https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30", waiting until "domcontentloaded"
+
+2025-11-12 01:45:07 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:45:38 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_TIMED_OUT at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:45:39 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:45:53 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/
+Call log:
+  - navigating to "https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/", waiting until "domcontentloaded"
+
+2025-11-12 01:46:03 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/: name 'asyncio' is not defined
+2025-11-12 01:46:15 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/", waiting until "domcontentloaded"
+
+2025-11-12 01:47:12 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:47:19 - SEOBot - ERROR - ❌ خطا در حل کپچا برای Bing: name 'asyncio' is not defined
+2025-11-12 01:47:22 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:47:28 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:47:33 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:47:38 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:47:43 - SEOBot - ERROR - ❌ خطا در حل کپچا برای Bing: name 'asyncio' is not defined
+2025-11-12 01:47:47 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:47:52 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:47:57 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:48:11 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/", waiting until "domcontentloaded"
+
+2025-11-12 01:48:22 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/", waiting until "domcontentloaded"
+
+2025-11-12 01:48:33 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/", waiting until "domcontentloaded"
+
+2025-11-12 01:48:53 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:49:01 - SEOBot - ERROR - ❌ خطا در حل کپچا برای Bing: name 'asyncio' is not defined
+2025-11-12 01:49:03 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:49:08 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:49:13 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:49:18 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:49:27 - SEOBot - ERROR - ❌ خطا در حل کپچا برای Bing: name 'asyncio' is not defined
+2025-11-12 01:49:31 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:49:36 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:49:41 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:49:52 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/
+Call log:
+  - navigating to "https://drshakibavida.com/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa/", waiting until "domcontentloaded"
+
+2025-11-12 01:50:05 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%b2%db%8c%d8%a8%d8%a7%db%8c%db%8c-%d9%86%da%86%d8%b1%d8%a7%d9%84-natural-beauty-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d8%a7%db%8c-%d8%af%d8%b3%d8%aa%db%8c%d8%a7%d8%a8%db%8c-%d8%a8%d9%87-%d9%86%d8%aa/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d8%b2%db%8c%d8%a8%d8%a7%db%8c%db%8c-%d9%86%da%86%d8%b1%d8%a7%d9%84-natural-beauty-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d8%a7%db%8c-%d8%af%d8%b3%d8%aa%db%8c%d8%a7%d8%a8%db%8c-%d8%a8%d9%87-%d9%86%d8%aa/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%b2%db%8c%d8%a8%d8%a7%db%8c%db%8c-%d9%86%da%86%d8%b1%d8%a7%d9%84-natural-beauty-%d8%b1%d8%a7%d9%87%d9%86%d9%85%d8%a7%db%8c-%d8%af%d8%b3%d8%aa%db%8c%d8%a7%d8%a8%db%8c-%d8%a8%d9%87-%d9%86%d8%aa/", waiting until "domcontentloaded"
+
+2025-11-12 01:50:17 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/: Page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/", waiting until "domcontentloaded"
+
+2025-11-12 01:51:59 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks4://89.46.249.148:9969: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:51:59 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks4://98.175.31.222:4145: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:51:59 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks4://98.181.137.80:4145: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:51:59 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks4://98.191.0.47:4145: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:51:59 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks4://98.175.31.195:4145: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:51:59 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks4://98.178.72.30:4145: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:52:00 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks4://98.182.147.97:4145: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:52:00 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks5://98.178.72.21:10919: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:52:00 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks5://98.181.137.83:4145: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:52:00 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks5://98.188.47.132:4145: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:52:00 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks5://89.46.249.146:54321: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:52:00 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks5://98.190.239.3:4145: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:52:00 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks5://98.170.57.231:4145: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:52:00 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks5://89.46.249.143:27182: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:52:00 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks5://98.191.0.37:4145: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 61, in process_target
+    browser = await get_browser_from_pool(playwright, proxy)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\pool.py", line 28, in get_browser_from_pool
+    browser = await launch_browser_with_proxy(playwright, proxy_config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\browser\launcher.py", line 37, in launch_browser_with_proxy
+    browser = await playwright.chromium.launch(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        headless=HEADLESS,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        ignore_https_errors=True,  # نادیده گرفتن خطاهای SSL
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: BrowserType.launch() got an unexpected keyword argument 'ignore_https_errors'
+2025-11-12 01:55:49 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:56:01 - SEOBot - ERROR - ❌ خطا در حل کپچا برای Bing: name 'asyncio' is not defined
+2025-11-12 01:56:01 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:56:02 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:56:03 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:56:03 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:56:10 - SEOBot - ERROR - ❌ خطا در حل کپچا برای Bing: name 'asyncio' is not defined
+2025-11-12 01:56:10 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:56:41 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_TIMED_OUT at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:57:12 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_TIMED_OUT at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:57:21 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%aa%d8%ad%d9%84%db%8c%d9%84-%d9%85%d9%82%d8%a7%db%8c%d8%b3%d9%87%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%da%98%d9%84-%d9%81%db%8c%d9%84%d8%b1-%d9%88-%d9%85%d8%b2%d9%88%da%98%d9%84/", waiting until "domcontentloaded"
+
+2025-11-12 01:57:29 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/", waiting until "domcontentloaded"
+
+2025-11-12 01:57:37 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/
+Call log:
+  - navigating to "https://drshakibavida.com/%d8%a8%d9%87%d8%aa%d8%b1%db%8c%d9%86-%d8%af%da%a9%d8%aa%d8%b1-%d8%a8%d8%b1%d8%a7%db%8c-%d8%aa%d8%b2%d8%b1%db%8c%d9%82-%d8%a8%d9%88%d8%aa%d8%a7%da%a9%d8%b3-%d8%af%d8%b1-%d8%b2%d8%b9%d9%81%d8%b1%d8%a7/", waiting until "domcontentloaded"
+
+2025-11-12 01:58:06 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:58:37 - SEOBot - ERROR -    ❌ خطا در Bing: Page.goto: net::ERR_TIMED_OUT at https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30
+Call log:
+  - navigating to "https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30", waiting until "domcontentloaded"
+
+2025-11-12 01:58:40 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:58:41 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:58:42 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%DA%98%D9%84+%D8%AF%D8%B1+%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:58:50 - SEOBot - ERROR -    ❌ خطا در Google: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30
+Call log:
+  - navigating to "https://www.google.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&num=30", waiting until "domcontentloaded"
+
+2025-11-12 01:58:51 - SEOBot - ERROR -    ❌ خطا در Bing: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30
+Call log:
+  - navigating to "https://www.bing.com/search?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&count=30", waiting until "domcontentloaded"
+
+2025-11-12 01:58:51 - SEOBot - ERROR -    ❌ خطا در DuckDuckGo: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web
+Call log:
+  - navigating to "https://duckduckgo.com/?q=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87&kl=us-en&ia=web", waiting until "domcontentloaded"
+
+2025-11-12 01:58:52 - SEOBot - ERROR -    ❌ خطا در Yandex: Page.goto: net::ERR_SOCKS_CONNECTION_FAILED at https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://yandex.com/search/?text=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:59:22 - SEOBot - ERROR -    ❌ خطا در Yahoo: Page.goto: net::ERR_TIMED_OUT at https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87
+Call log:
+  - navigating to "https://search.yahoo.com/search?p=%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86+%D8%AF%DA%A9%D8%AA%D8%B1+%D8%A8%D8%B1%D8%A7%DB%8C+%D8%AA%D8%B2%D8%B1%DB%8C%D9%82+%D8%A8%D9%88%D8%AA%D8%A7%DA%A9%D8%B3%C2%A0%D8%AF%D8%B1%C2%A0%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86%DB%8C%D9%87", waiting until "domcontentloaded"
+
+2025-11-12 01:59:29 - SEOBot - ERROR - ❌ خطا در بازدید صفحه https://drshakibavida.com/%d8%b1%d8%a7%d8%b2-%d9%84%db%8c%d9%81%d8%aa-%d8%b5%d9%88%d8%b1%d8%aa-%d8%a8%d8%af%d9%88%d9%86-%d8%ac%d8%b1%d8%a7%d8%ad%db%8c-%d8%a8%d8%a7-md-codes-%d8%af%d8%b1-%d9%88%d9%84%d9%86%d8%ac%da%a9-%d9%86/: Page.goto: Target page, context or browser has been closed
+2025-11-12 01:59:29 - SEOBot - ERROR - ❌ خطا در استفاده از پروکسی socks4://89.46.249.148:9969: BrowserContext.close: Target page, context or browser has been closed
+Browser logs:
+
+<launching> C:\Users\GCORPLLC\AppData\Local\ms-playwright\chromium-1187\chrome-win\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --no-sandbox --proxy-server=socks4://89.46.249.148:9969 --proxy-bypass-list=<-loopback> --disable-blink-features=AutomationControlled --disable-features=IsolateOrigins,site-per-process --disable-site-isolation-trials --disable-web-security --disable-features=BlockInsecurePrivateNetworkRequests --disable-features=OutOfBlinkCors --no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --disable-accelerated-2d-canvas --no-first-run --no-zygote --disable-gpu --ignore-certificate-errors --ignore-ssl-errors --disable-features=CertificateTransparencyEnforcement --user-data-dir=C:\Users\GCORPLLC\AppData\Local\Temp\playwright_chromiumdev_profile-SRrKa9 --remote-debugging-pipe --no-startup-window
+<launched> pid=8068
+[pid=8068] <gracefully close start>
+Traceback (most recent call last):
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\main.py", line 67, in process_target
+    await process_device(playwright, browser, device, proxy, target)
+  File "C:\Users\GCORPLLC\Desktop\Project\Seo Robot\devices\processor.py", line 102, in process_device
+    await context.close()
+  File "C:\Users\GCORPLLC\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 13451, in close
+    return mapping.from_maybe_impl(await self._impl_obj.close(reason=reason))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GCORPLLC\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 620, in close
+    await self._channel.send("close", None, {"reason": reason})
+  File "C:\Users\GCORPLLC\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\GCORPLLC\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.close: Target page, context or browser has been closed
+Browser logs:
+
+<launching> C:\Users\GCORPLLC\AppData\Local\ms-playwright\chromium-1187\chrome-win\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --no-sandbox --proxy-server=socks4://89.46.249.148:9969 --proxy-bypass-list=<-loopback> --disable-blink-features=AutomationControlled --disable-features=IsolateOrigins,site-per-process --disable-site-isolation-trials --disable-web-security --disable-features=BlockInsecurePrivateNetworkRequests --disable-features=OutOfBlinkCors --no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --disable-accelerated-2d-canvas --no-first-run --no-zygote --disable-gpu --ignore-certificate-errors --ignore-ssl-errors --disable-features=CertificateTransparencyEnforcement --user-data-dir=C:\Users\GCORPLLC\AppData\Local\Temp\playwright_chromiumdev_profile-SRrKa9 --remote-debugging-pipe --no-startup-window
+<launched> pid=8068
+[pid=8068] <gracefully close start>
+2025-11-12 01:59:47 - SEOBot - ERROR - ❌ هیچ پروکسی فعالی یافت نشد!
+2025-11-12 02:00:27 - SEOBot - ERROR - ❌ هیچ پروکسی فعالی یافت نشد!
+2025-11-12 02:07:23 - SEOBot - ERROR - ❌ هیچ پروکسی فعالی یافت نشد!
+2025-11-12 02:08:18 - SEOBot - ERROR - ❌ هیچ پروکسی فعالی یافت نشد!
+2025-11-12 02:08:27 - SEOBot - ERROR - ❌ هیچ پروکسی فعالی یافت نشد!
+2025-11-12 02:23:01 - SEOBot - ERROR - ❌ هیچ پروکسی فعالی یافت نشد!

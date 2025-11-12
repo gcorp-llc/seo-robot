@@ -19,6 +19,9 @@ async def launch_browser_with_proxy(playwright: Playwright, proxy_config: Option
         '--no-first-run',
         '--no-zygote',
         '--disable-gpu',
+        '--ignore-certificate-errors',  # نادیده گرفتن خطاهای گواهی SSL
+        '--ignore-ssl-errors',  # نادیده گرفتن خطاهای SSL
+        '--disable-features=CertificateTransparencyEnforcement',  # غیرفعال کردن CT
     ]
     
     proxy_dict = None
