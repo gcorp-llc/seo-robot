@@ -1,8 +1,14 @@
+# -*- coding: utf-8 -*-
 from typing import List, Dict, Optional
 
-from config.proxy_config import ProxyConfig
+# از فایل جدید ایمپورت می‌کنیم
+from proxy_manager import ProxyConfig
+from core.logger import logger
 
 def validate_proxy_format(proxy_url: str) -> bool:
+    """
+    این تابع اکنون می‌تواند به proxy_manager منتقل شود، اما برای سازگاری نگه داشته شده است.
+    """
     from urllib.parse import urlparse
     try:
         parsed = urlparse(proxy_url)
@@ -17,9 +23,12 @@ def validate_proxy_format(proxy_url: str) -> bool:
         return False
 
 def filter_proxies_by_criteria(proxies: List[ProxyConfig], 
-                               max_latency: int = 500,
+                               max_latency: float = 5.0, # تغییر به ثانیه
                                min_success_rate: float = 0.7,
                                countries: List[str] = None) -> List[ProxyConfig]:
+    """
+    پروکسی‌ها را بر اساس معیارهای داده شده فیلتر می‌کند.
+    """
     filtered = []
     for proxy in proxies:
         if (proxy.latency <= max_latency and 
@@ -31,6 +40,9 @@ def filter_proxies_by_criteria(proxies: List[ProxyConfig],
     return filtered
 
 def create_proxy_from_csv_row(row: Dict[str, str]) -> Optional[ProxyConfig]:
+    """
+    (به‌روز شده) - یک آبجکت ProxyConfig از ردیف CSV ایجاد می‌کند.
+    """
     try:
         ip = row.get('IP', '').strip().strip('"')
         port = row.get('Port', '').strip().strip('"')
@@ -50,7 +62,15 @@ def create_proxy_from_csv_row(row: Dict[str, str]) -> Optional[ProxyConfig]:
         
         protocol = protocol_map.get(protocol_str.upper(), 'http')
         port_int = int(port)
-        latency_int = int(latency_str.replace(' ms', '')) if ' ms' in latency_str else int(latency_str)
+        
+        # تبدیل Latency از 'ms' به ثانیه اگر لازم باشد
+        try:
+            if 'ms' in latency_str:
+                latency_float = float(latency_str.replace(' ms', '')) / 1000.0
+            else:
+                latency_float = float(latency_str)
+        except ValueError:
+            latency_float = float('inf') # اگر مقدار نامعتبر بود
         
         proxy_url = f"{protocol}://{ip}:{port_int}"
         
@@ -60,10 +80,9 @@ def create_proxy_from_csv_row(row: Dict[str, str]) -> Optional[ProxyConfig]:
             port=port_int,
             protocol=protocol,
             country=country,
-            latency=latency_int,
-            is_active=True
+            latency=latency_float, # استفاده از مقدار float
+            is_active=True # فرض اولیه بر فعال بودن تا زمان بررسی
         )
     except Exception as e:
-        from core.logger import logger
         logger.error(f"خطا در ایجاد پروکسی از CSV: {e} - ردیف: {row}")
         return None

@@ -4,6 +4,21 @@ from typing import List, Dict, Optional, Any
 from datetime import datetime
 import random
 import logging
+import os
+import inspect
+
+# مسیر ریشه پروژه (پوشه حاوی این فایل‌ها)
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+# افزودن تنظیمات بارگذاری پروکسی (قابل تغییر توسط کاربر/محیط)
+# مقدار پیش‌فرض حالا به فایل proxies-export.csv در روت پروژه اشاره می‌کند
+PROXY_CSV_FILE: str = os.path.join(PROJECT_ROOT, 'proxies-export.csv')
+PROXY_API_URL: Optional[str] = None  # مثال: 'https://api.proxyscrape.com/v2/?request=getproxies&protocol=http'
+MANUAL_PROXIES: List[str] = [
+    'http://1.52.198.150:16000',
+    "118.174.115.252:8080",
+    "62.60.236.119:3128",
+]       # مثال: ['http://1.2.3.4:8080']
 
 class ProxyType(Enum):
     HTTP = "http"
@@ -25,12 +40,34 @@ class ProxyConfig:
     success_rate: float = 1.0
     
     def __post_init__(self):
+        # نرمال‌سازی ایمن protocol
         if isinstance(self.protocol, str):
-            self.protocol = ProxyType(self.protocol.lower())
+            s = self.protocol.strip().lower()
+            # حذف احتمالی "://" یا ":" که ممکن است در CSV آمده باشد
+            if s.endswith('://'):
+                s = s[:-3]
+            if s.endswith(':'):
+                s = s[:-1]
+            # اگر مقدار سازگار بود، مقدار Enum را تنظیم کن؛ در غیر این صورت پیش‌فرض HTTP
+            try:
+                self.protocol = ProxyType(s)
+            except Exception:
+                # تلاش برای تطبیق با نام اعضا (در صورت ارسال 'HTTP' یا مشابه)
+                try:
+                    self.protocol = ProxyType[s.upper()]
+                except Exception:
+                    self.protocol = ProxyType.HTTP
+        # پورت و latency را تبدیل کن
         if isinstance(self.port, str):
-            self.port = int(self.port)
+            try:
+                self.port = int(self.port)
+            except Exception:
+                self.port = 0
         if isinstance(self.latency, str):
-            self.latency = int(self.latency.replace(' ms', ''))
+            try:
+                self.latency = int(self.latency.replace(' ms', '').strip())
+            except Exception:
+                self.latency = 0
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -52,10 +89,12 @@ class ProxyConfig:
 
 class ProxyManager:
     def __init__(self):
+        # حذف بارگذاری خودکار از __init__ تا کنترلی‌تر باشد
         self.proxies: List[ProxyConfig] = []
         self.active_proxies: List[ProxyConfig] = []
-        self.load_proxies_from_csv()
-    
+        # هنگام نیاز main.py یا هر ماژول دیگری صدا خواهد خورد:
+        # await proxy_manager.load_proxies_from_csv(PROXY_CSV_FILE) یا proxy_manager.load_proxies_from_csv()
+
     def add_proxy(self, proxy: ProxyConfig):
         self.proxies.append(proxy)
         if proxy.is_active:
@@ -110,19 +149,64 @@ class ProxyManager:
     def get_active_proxy_urls(self) -> List[str]:
         return [p.url for p in self.active_proxies]
     
-    def load_proxies_from_csv(self):
+    def load_proxies_from_csv(self, path: Optional[str] = None):
+        """
+        Load proxies using an internal loader if available.
+        If load_proxies_from_csv_advanced accepts a path, pass it.
+        Cache results in module-global _loaded_proxies_from_csv to avoid re-parsing.
+        """
+        global _loaded_proxies_from_csv
+        _loaded_proxies_from_csv = globals().get('_loaded_proxies_from_csv', None)
+
+        # Use provided path or default from config
+        if not path:
+            path = PROXY_CSV_FILE
+
         try:
             from .proxy_loader import load_proxies_from_csv_advanced
-            global _loaded_proxies_from_csv
-            if '_loaded_proxies_from_csv' in globals() and _loaded_proxies_from_csv:
+            # اگر کش وجود دارد و مقدار معتبر است از آن استفاده کن
+            if _loaded_proxies_from_csv:
                 proxies = _loaded_proxies_from_csv
             else:
-                proxies = load_proxies_from_csv_advanced()
+                # بررسی سیگنچر تابع loader برای دیدن اینکه path می‌پذیرد یا خیر
+                try:
+                    sig = inspect.signature(load_proxies_from_csv_advanced)
+                    if len(sig.parameters) == 0:
+                        proxies = load_proxies_from_csv_advanced()
+                    else:
+                        proxies = load_proxies_from_csv_advanced(path)
+                except (ValueError, TypeError):
+                    # اگر نتوانستیم سیگنچر را بدست آوریم، تلاش با هر دو حالت
+                    try:
+                        proxies = load_proxies_from_csv_advanced(path)
+                    except TypeError:
+                        proxies = load_proxies_from_csv_advanced()
+                _loaded_proxies_from_csv = proxies
+            # اضافه کردن پروکسی‌ها (منتظر اشیاء یا رشته‌های نرمال‌شده)
             for proxy in proxies:
-                self.add_proxy(proxy)
+                # اگر proxy یک dict باشد سعی در تبدیل به ProxyConfig کن
+                if isinstance(proxy, dict):
+                    try:
+                        pc = ProxyConfig.from_dict(proxy)
+                        self.add_proxy(pc)
+                        continue
+                    except Exception:
+                        pass
+                # اگر proxy شیء ProxyConfig است، مستقیم اضافه کن
+                if isinstance(proxy, ProxyConfig):
+                    self.add_proxy(proxy)
+                else:
+                    # رشته یا دیگران را نگه دار (مستقیماً الحاق می‌کنیم؛ callers بعدا می‌توانند تبدیل کنند)
+                    try:
+                        self.proxies.append(proxy)
+                        # رشته‌ها را به active_proxies هم اضافه کن (فرض فعال)
+                        self.active_proxies.append(proxy)
+                    except Exception:
+                        continue
             logging.info(f"✅ {len(proxies)} پروکسی از CSV بارگذاری شد")
         except Exception as e:
             logging.error(f"خطا در بارگذاری پیکربندی پروکسی از CSV: {e}")
+            # در حالت خطا، لیست‌ها را خالی کن اما اجازه بده caller مجدداً تلاش کند
             self.proxies = []
             self.active_proxies = []
     

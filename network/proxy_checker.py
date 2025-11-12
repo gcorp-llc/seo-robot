@@ -1,82 +1,32 @@
-import time
+# -*- coding: utf-8 -*-
 import asyncio
-import aiohttp
-import random
+from typing import List, Optional
 
-from config.proxy_config import ProxyConfig
-from config.general_settings import CUSTOM_USER_AGENTS
-from config.proxy_loader import PROXY_CHECK_TIMEOUT, proxy_manager
-from core.performance_monitor import performance_monitor
-from core.logger import logger
+# اصلاح ایمپورت‌ها: از ایمپورت نسبی برای استفاده داخل پکیج 'network' استفاده می‌کنیم
+from .proxy_manager import proxy_manager, ProxyConfig
 
-_proxy_check_cache = {}
-_proxy_check_cache_timeout = 300  # 5 دقیقه
+# هماهنگ با main.py: logger را از core وارد می‌کنیم (همان شیء logger که در main استفاده می‌شود)
+from core import logger
 
-async def check_proxy_advanced(proxy_config: ProxyConfig) -> bool:
-    current_time = time.time()
-    cache_key = proxy_config.url
-    
-    if cache_key in _proxy_check_cache:
-        cached_result, cache_time = _proxy_check_cache[cache_key]
-        if current_time - cache_time < _proxy_check_cache_timeout:
-            logger.debug(f"📋 استفاده از کش برای پروکسی: {proxy_config.url}")
-            return cached_result
-    
+# تنظیمات را می‌توان از فایل کانفیگ اصلی خواند
+CONCURRENCY = 50 
+
+async def run_proxy_validation():
+    """
+    (ساده‌سازی شده) - این تابع اکنون فقط به عنوان یک wrapper
+    برای اجرای بررسی در proxy_manager عمل می‌کند.
+    """
+    logger.info("در حال شروع فرآیند بررسی پروکسی‌ها...")
     try:
-        timeout = aiohttp.ClientTimeout(total=PROXY_CHECK_TIMEOUT)
-        async with aiohttp.ClientSession(timeout=timeout) as session:
-            async with session.get(
-                "https://httpbin.org/ip", 
-                proxy=proxy_config.url,
-                headers={'User-Agent': random.choice(CUSTOM_USER_AGENTS)}
-            ) as resp:
-                success = resp.status == 200
-                if success:
-                    proxy_manager.mark_success(proxy_config.url)
-                    data = await resp.json()
-                    logger.debug(f"✅ پروکسی {proxy_config.url} فعال است - IP: {data.get('origin', 'Unknown')}")
-                else:
-                    proxy_manager.mark_failed(proxy_config.url)
-                    logger.warning(f"⚠️ پروکسی {proxy_config.url} پاسخ ناموفق: {resp.status}")
-                _proxy_check_cache[cache_key] = (success, current_time)
-                return success
-    except asyncio.TimeoutError:
-        logger.warning(f"⏰ تایم‌اوت در بررسی پروکسی {proxy_config.url}")
-        proxy_manager.mark_failed(proxy_config.url)
-        performance_monitor.record_proxy_failure()
-        result = False
+        await proxy_manager.run_proxy_validation(concurrency=CONCURRENCY)
+        logger.info("فرآیند بررسی پروکسی‌ها با موفقیت تمام شد.")
     except Exception as e:
-        logger.debug(f"❌ پروکسی {proxy_config.url} فعال نیست: {str(e)[:100]}")
-        proxy_manager.mark_failed(proxy_config.url)
-        performance_monitor.record_proxy_failure()
-        result = False
-    
-    _proxy_check_cache[cache_key] = (result, current_time)
-    return result
+        logger.error(f"خطا در هنگام اجرای بررسی پروکسی‌ها: {e}")
 
-async def get_active_proxies_advanced() -> List[Optional[ProxyConfig]]:
-    logger.info("🔍 در حال بررسی پیشرفته پروکسی‌ها...")
-    
-    if not proxy_manager:
-        logger.warning("⚠️ مدیر پروکسی در دسترس نیست")
-        return [None] if INCLUDE_NO_PROXY else []
-    
-    active_proxies = []
-    
-    if proxy_manager.active_proxies:
-        logger.info(f"📊 در حال بررسی {len(proxy_manager.active_proxies)} پروکسی فعال...")
-        
-        semaphore = asyncio.Semaphore(10)
-        
-        async def check_with_semaphore(proxy_config):
-            async with semaphore:
-                return await check_proxy_advanced(proxy_config)
-        
-        checks = await asyncio.gather(*[check_with_semaphore(p) for p in proxy_manager.active_proxies])
-        
-        active_proxies = [p for p, is_active in zip(proxy_manager.active_proxies, checks) if is_active]
-    
-    if INCLUDE_NO_PROXY:
-        active_proxies.append(None)
-    
-    return active_proxies
+async def get_active_proxies() -> List[ProxyConfig]:
+    """
+    (ساده‌سازی شده) - پروکسی‌های فعال را مستقیماً از مدیر پروکسی دریافت می‌کند.
+    """
+    active_list = proxy_manager.get_active_proxies()
+    logger.info(f"تعداد {len(active_list)} پروکسی فعال بازگردانده شد.")
+    return active_list
