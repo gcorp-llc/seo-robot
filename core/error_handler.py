@@ -10,7 +10,6 @@ import json
 from playwright.async_api import TimeoutError as PlaywrightTimeout
 import aiohttp
 
-from config.proxy_loader import MAX_RETRIES_PER_PROXY
 from core.performance_monitor import performance_monitor
 from core.logger import logger
 
@@ -122,3 +121,5 @@ class ErrorHandler:
         logger.error(f"📊 خطای ثبت شده: {json.dumps(error_log, ensure_ascii=False)}")
 
 global_error_handler = ErrorHandler()
+
+MAX_RETRIES_PER_PROXY = 3  # تعریف مستقیم

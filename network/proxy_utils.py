@@ -1,88 +1,50 @@
 # -*- coding: utf-8 -*-
-from typing import List, Dict, Optional
+"""
+ابزارهای کمکی پارس پروکسی - منتقل شده از روت
+"""
+from typing import Optional
+from .proxy_config_model import ProxyConfig, ProxyType
 
-# از فایل جدید ایمپورت می‌کنیم
-from proxy_manager import ProxyConfig
-from core.logger import logger
-
-def validate_proxy_format(proxy_url: str) -> bool:
-    """
-    این تابع اکنون می‌تواند به proxy_manager منتقل شود، اما برای سازگاری نگه داشته شده است.
-    """
-    from urllib.parse import urlparse
-    try:
-        parsed = urlparse(proxy_url)
-        if parsed.scheme not in ['http', 'https', 'socks4', 'socks5']:
-            return False
-        if not parsed.hostname or not parsed.port:
-            return False
-        if not (1 <= parsed.port <= 65535):
-            return False
-        return True
-    except Exception:
-        return False
-
-def filter_proxies_by_criteria(proxies: List[ProxyConfig], 
-                               max_latency: float = 5.0, # تغییر به ثانیه
-                               min_success_rate: float = 0.7,
-                               countries: List[str] = None) -> List[ProxyConfig]:
-    """
-    پروکسی‌ها را بر اساس معیارهای داده شده فیلتر می‌کند.
-    """
-    filtered = []
-    for proxy in proxies:
-        if (proxy.latency <= max_latency and 
-            proxy.success_rate >= min_success_rate and
-            proxy.is_active):
-            if countries and proxy.country not in countries:
-                continue
-            filtered.append(proxy)
-    return filtered
-
-def create_proxy_from_csv_row(row: Dict[str, str]) -> Optional[ProxyConfig]:
-    """
-    (به‌روز شده) - یک آبجکت ProxyConfig از ردیف CSV ایجاد می‌کند.
-    """
-    try:
-        ip = row.get('IP', '').strip().strip('"')
-        port = row.get('Port', '').strip().strip('"')
-        protocol_str = row.get('Protocol', 'HTTP').strip().strip('"')
-        country = row.get('Country', 'Unknown').strip().strip('"')
-        latency_str = row.get('Latency', '0').strip().strip('"')
-        
-        if not ip or not port:
-            return None
-        
-        protocol_map = {
-            'HTTP': 'http',
-            'HTTPS': 'https', 
-            'SOCKS4': 'socks4',
-            'SOCKS5': 'socks5'
-        }
-        
-        protocol = protocol_map.get(protocol_str.upper(), 'http')
-        port_int = int(port)
-        
-        # تبدیل Latency از 'ms' به ثانیه اگر لازم باشد
+def _parse_proxy_string(s: str) -> Optional[ProxyConfig]:
+    """تبدیل رشته پروکسی به ProxyConfig"""
+    if not s:
+        return None
+    s = s.strip().strip('"').strip("'")
+    scheme = None
+    hostport = s
+    if '://' in s:
+        scheme, hostport = s.split('://', 1)
+    if ':' in hostport:
+        host, port = hostport.rsplit(':', 1)
+    else:
+        host, port = hostport, 0
+    
+    proto = ProxyType.HTTP
+    if scheme:
         try:
-            if 'ms' in latency_str:
-                latency_float = float(latency_str.replace(' ms', '')) / 1000.0
-            else:
-                latency_float = float(latency_str)
-        except ValueError:
-            latency_float = float('inf') # اگر مقدار نامعتبر بود
-        
-        proxy_url = f"{protocol}://{ip}:{port_int}"
-        
-        return ProxyConfig(
-            url=proxy_url,
-            ip=ip,
-            port=port_int,
-            protocol=protocol,
-            country=country,
-            latency=latency_float, # استفاده از مقدار float
-            is_active=True # فرض اولیه بر فعال بودن تا زمان بررسی
-        )
-    except Exception as e:
-        logger.error(f"خطا در ایجاد پروکسی از CSV: {e} - ردیف: {row}")
+            proto = ProxyType(scheme.lower())
+        except Exception:
+            try:
+                proto = ProxyType[scheme.upper()]
+            except Exception:
+                proto = ProxyType.HTTP
+    
+    try:
+        pc = ProxyConfig(url=s, ip=host, port=int(port or 0), protocol=proto)
+        return pc
+    except Exception:
+        return None
+
+def create_proxy_from_csv_row(row):
+    """تبدیل ردیف CSV به رشته پروکسی"""
+    try:
+        if isinstance(row, dict):
+            for key in ('proxy', 'address', 'ip', 'host'):
+                if key in row and row[key]:
+                    return str(row[key]).strip()
+        if isinstance(row, (list, tuple)):
+            if len(row) >= 1:
+                return str(row[0]).strip()
+        return str(row).strip() if row else None
+    except Exception:
         return None

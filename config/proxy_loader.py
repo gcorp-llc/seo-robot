@@ -3,7 +3,7 @@ from pathlib import Path
 import logging
 import os
 
-from .proxy_config import ProxyConfig
+from network.proxy_config_model import ProxyConfig
 
 PROXY_CONFIG = {
     'max_proxies': int(os.getenv('MAX_PROXIES', '0')),

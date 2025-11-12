@@ -2,7 +2,7 @@ from typing import Optional
 from datetime import datetime
 
 from playwright.async_api import Playwright, Browser
-from config.proxy_config import ProxyConfig
+from network.proxy_config_model import ProxyConfig
 from core.logger import logger
 from .launcher import launch_browser_with_proxy
 

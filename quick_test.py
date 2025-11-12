@@ -3,26 +3,23 @@
 """
 import asyncio
 import aiohttp
-import csv
 from datetime import datetime
 
-# لیست پروکسی‌های شما
+# لیست پروکسی‌های شما (فرمت: "http://IP:PORT")
 PROXIES = [
-    ("3.87.76.58", "1080"),
-    ("209.97.150.167", "80"),
-    ("44.251.173.250", "9106"),
-    ("138.68.60.8", "3128"),
-    ("3.87.76.58", "80"),
-    ("47.90.149.238", "8889"),
-    ("47.90.149.238", "8443"),
-    ("47.90.149.238", "4145"),
-    ("47.252.11.233", "45"),
-    ("47.252.11.233", "8081"),
+    "http://3.87.76.58:1080",
+    "http://209.97.150.167:80",
+    "http://44.251.173.250:9106",
+    "http://138.68.60.8:3128",
+    "http://3.87.76.58:80",
+    "http://47.90.149.238:8889",
+    "http://47.90.149.238:8443",
+    "http://47.90.149.238:4145",
+    "http://47.252.11.233:45",
 ]
 
-async def test_proxy(ip: str, port: str, protocol: str = "http") -> dict:
+async def test_proxy(proxy_url: str) -> dict:
     """تست یک پروکسی"""
-    proxy_url = f"{protocol}://{ip}:{port}"
     result = {
         "proxy": proxy_url,
         "status": "❌ Failed",
@@ -36,7 +33,7 @@ async def test_proxy(ip: str, port: str, protocol: str = "http") -> dict:
         
         async with aiohttp.ClientSession(timeout=timeout) as session:
             async with session.get(
-                "http://httpbin.org/ip",  # استفاده از HTTP ساده
+                "http://httpbin.org/ip",
                 proxy=proxy_url,
                 ssl=False
             ) as resp:
@@ -74,7 +71,7 @@ async def test_all():
     print("\n📡 تست با پروتکل HTTP:")
     print("-"*70)
     http_results = await asyncio.gather(*[
-        test_proxy(ip, port, "http") for ip, port in PROXIES
+        test_proxy(proxy) for proxy in PROXIES
     ])
     
     # شمارش نتایج
@@ -113,8 +110,7 @@ async def test_with_playwright():
         
         async with async_playwright() as p:
             # تست اولین پروکسی
-            ip, port = PROXIES[0]
-            proxy_url = f"http://{ip}:{port}"
+            proxy_url = PROXIES[0]
             
             print(f"\n🔍 تست {proxy_url} با Playwright...")
             

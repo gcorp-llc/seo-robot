@@ -18,14 +18,109 @@ CUSTOM_USER_AGENTS = [
 ]
 
 DEVICES = [
-    "iPhone 15 Pro",
-    "iPhone 16",
-    "iPhone 12 Pro",
-    "iPhone 12",
-    "Pixel 7",
-    "Galaxy S22 Ultra",
-    "Galaxy S24 Ultra",
-    "Galaxy S25"
+    # iPhone devices
+    {
+        "name": "iPhone 15 Pro",
+        "device_type": "mobile",
+        "brand": "Apple",
+        "os": "iOS",
+        "screen_size": "6.1",
+        "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15"
+    },
+    {
+        "name": "iPhone 16",
+        "device_type": "mobile",
+        "brand": "Apple",
+        "os": "iOS",
+        "screen_size": "6.1",
+        "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15"
+    },
+    {
+        "name": "iPhone 12 Pro",
+        "device_type": "mobile",
+        "brand": "Apple",
+        "os": "iOS",
+        "screen_size": "6.1",
+        "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15"
+    },
+    {
+        "name": "iPhone 12",
+        "device_type": "mobile",
+        "brand": "Apple",
+        "os": "iOS",
+        "screen_size": "6.1",
+        "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15"
+    },
+    
+    # Samsung Android devices
+    {
+        "name": "Galaxy S25 Ultra",
+        "device_type": "mobile",
+        "brand": "Samsung",
+        "os": "Android",
+        "screen_size": "6.8",
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; SM-S928B) AppleWebKit/537.36"
+    },
+    {
+        "name": "Galaxy S24 Ultra",
+        "device_type": "mobile",
+        "brand": "Samsung",
+        "os": "Android",
+        "screen_size": "6.8",
+        "user_agent": "Mozilla/5.0 (Linux; Android 14; SM-S918B) AppleWebKit/537.36"
+    },
+    {
+        "name": "Galaxy S22 Ultra",
+        "device_type": "mobile",
+        "brand": "Samsung",
+        "os": "Android",
+        "screen_size": "6.8",
+        "user_agent": "Mozilla/5.0 (Linux; Android 13; SM-S908B) AppleWebKit/537.36"
+    },
+    
+    # Google Pixel devices
+    {
+        "name": "Pixel 9 Pro",
+        "device_type": "mobile",
+        "brand": "Google",
+        "os": "Android",
+        "screen_size": "6.3",
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; Pixel 9 Pro) AppleWebKit/537.36"
+    },
+    {
+        "name": "Pixel 8",
+        "device_type": "mobile",
+        "brand": "Google",
+        "os": "Android",
+        "screen_size": "6.2",
+        "user_agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36"
+    },
+    {
+        "name": "Pixel 7",
+        "device_type": "mobile",
+        "brand": "Google",
+        "os": "Android",
+        "screen_size": "6.1",
+        "user_agent": "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36"
+    },
+    
+    # Tablets
+    {
+        "name": "iPad Pro 12.9",
+        "device_type": "tablet",
+        "brand": "Apple",
+        "os": "iPadOS",
+        "screen_size": "12.9",
+        "user_agent": "Mozilla/5.0 (iPad; CPU OS 17_0 like Mac OS X) AppleWebKit/605.1.15"
+    },
+    {
+        "name": "Galaxy Tab S9",
+        "device_type": "tablet",
+        "brand": "Samsung",
+        "os": "Android",
+        "screen_size": "11.0",
+        "user_agent": "Mozilla/5.0 (Linux; Android 13; SM-T820) AppleWebKit/537.36"
+    },
 ]
 
 USE_CUSTOM_USER_AGENTS = True

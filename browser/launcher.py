@@ -1,7 +1,7 @@
 from typing import Optional
 
 from playwright.async_api import Playwright, Browser
-from config.proxy_config import ProxyConfig
+from network.proxy_config_model import ProxyConfig
 from config.general_settings import HEADLESS
 
 async def launch_browser_with_proxy(playwright: Playwright, proxy_config: Optional[ProxyConfig] = None) -> Browser:
