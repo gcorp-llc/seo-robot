@@ -1,5 +1,11 @@
 from .search_engine import search_in_engine
-from .page_visit import visit_page_naturally, smart_click_and_visit
+from .page_visit import visit_page_naturally, visit_internal_links, smart_click_and_visit
 from .link_extractor import extract_internal_links
-from .fallback_extractors import extract_urls_from_text, extract_urls_from_meta, extract_urls_from_scripts, extract_urls_from_images
-from .interceptors import intercept_route
+
+__all__ = [
+    'search_in_engine',
+    'visit_page_naturally',
+    'visit_internal_links',
+    'smart_click_and_visit',
+    'extract_internal_links'
+]
