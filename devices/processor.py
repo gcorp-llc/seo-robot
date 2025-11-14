@@ -1,3 +1,5 @@
+# devices/processor.py - نسخه اصلاح شده
+
 import random
 import asyncio
 from urllib.parse import urlparse
@@ -10,9 +12,11 @@ from network.proxy_config_model import ProxyConfig
 from core.logger import logger
 from crawler.search_engine import search_in_engine
 from crawler.page_visit import visit_page_naturally, visit_internal_links, smart_click_and_visit
-from crawler.link_extractor import extract_internal_links
 from config.search_engines import get_search_engines
 from config.human_settings import BETWEEN_ENGINES_DELAY, BETWEEN_PAGES_DELAY
+
+# ✅ import setup_stealth_context
+from browser.launcher import setup_stealth_context
 
 
 async def process_device(
@@ -24,6 +28,11 @@ async def process_device(
 ) -> None:
     """
     پردازش یک دستگاه با رفتار کاملاً انسانی
+    
+    ✅ تغییرات:
+    - استفاده از setup_stealth_context
+    - بررسی دقیق‌تر navigation
+    - لاگ بهتر برای دیباگ
     """
     target_domain = target["TARGET_DOMAIN"]
     queries = target.get("QUERIES", [])
@@ -52,7 +61,7 @@ async def process_device(
         if not device_spec:
             device_spec = {
                 "user_agent": device.get("user_agent"),
-                "viewport": {"width": 390, "height": 844} if device.get("device_type") == "mobile" else {"width": 1280, "height": 800},
+                "viewport": {"width": 390, "height": 844} if device.get("device_type") == "mobile" else {"width": 1920, "height": 1080},
                 "is_mobile": device.get("device_type") == "mobile",
                 "device_scale_factor": float(device.get("device_scale_factor", 2))
             }
@@ -70,7 +79,7 @@ async def process_device(
                 if found:
                     device_spec = {
                         "user_agent": found.get("user_agent"),
-                        "viewport": {"width": 390, "height": 844} if found.get("device_type") == "mobile" else {"width": 1280, "height": 800},
+                        "viewport": {"width": 390, "height": 844} if found.get("device_type") == "mobile" else {"width": 1920, "height": 1080"},
                         "is_mobile": found.get("device_type") == "mobile",
                         "device_scale_factor": float(found.get("device_scale_factor", 2))
                     }
@@ -82,7 +91,7 @@ async def process_device(
     else:
         logger.info(f"📱 دستگاه انتخاب‌شده (مخصص): {device}")
 
-    # ساخت context
+    # ساخت context با anti-detection
     context_kwargs = {"ignore_https_errors": True}
     if device_spec:
         ua = device_spec.get("userAgent") or device_spec.get("user_agent")
@@ -98,15 +107,24 @@ async def process_device(
             context_kwargs["device_scale_factor"] = device_spec.get("device_scale_factor")
 
     try:
-        context = await browser.new_context(**context_kwargs)
+        # ✅ استفاده از setup_stealth_context
+        context = await setup_stealth_context(browser, **context_kwargs)
         page = await context.new_page()
+        
+        # ✅ لاگ user-agent برای تأیید
+        actual_ua = await page.evaluate("() => navigator.userAgent")
+        logger.debug(f"🌐 User-Agent: {actual_ua[:80]}...")
+        
+        # ✅ بررسی webdriver
+        is_webdriver = await page.evaluate("() => navigator.webdriver")
+        logger.debug(f"🤖 navigator.webdriver: {is_webdriver}")
         
         if ENABLE_TRACING:
             await context.tracing.start(name=f"trace_{device_name}", screenshots=True, snapshots=True)
         
         try:
             # ═══════════════════════════════════════════════════════════
-            # بخش 1: جستجو و بازدید از نتایج با رفتار انسانی
+            # بخش 1: جستجو و بازدید از نتایج
             # ═══════════════════════════════════════════════════════════
             if do_search:
                 logger.info("\n" + "="*80)
@@ -128,7 +146,7 @@ async def process_device(
                         logger.info(f"🔎 موتور: {engine['name']}")
                         logger.info(f"{'='*70}")
                         
-                        # جستجو در موتور
+                        # جستجو در موتور (حالا Dict برمی‌گرداند)
                         results = await search_in_engine(page, engine)
                         
                         if not results:
@@ -137,10 +155,10 @@ async def process_device(
                         
                         logger.info(f"✅ {len(results)} نتیجه یافت شد")
                         
-                        # کلیک و بازدید هوشمند با رفتار انسانی
+                        # ✅ کلیک و بازدید هوشمند (حالا با Dict)
                         visited = await smart_click_and_visit(
                             page, 
-                            results, 
+                            results,  # حالا List[Dict]
                             target_domain, 
                             engine["url"]
                         )
@@ -157,14 +175,13 @@ async def process_device(
                             await asyncio.sleep(delay)
             
             # ═══════════════════════════════════════════════════════════
-            # بخش 2: بازدید مستقیم از URLها با رفتار انسانی
+            # بخش 2: بازدید مستقیم
             # ═══════════════════════════════════════════════════════════
             if do_direct_visit:
                 logger.info("\n" + "="*80)
                 logger.info("🎯 حالت: بازدید مستقیم")
                 logger.info("="*80)
                 
-                # انتخاب تصادفی از URLها
                 num_to_visit = min(3, len(direct_urls))
                 selected_urls = random.sample(direct_urls, num_to_visit)
                 
@@ -175,13 +192,11 @@ async def process_device(
                     logger.info(f"🌐 URL {i}/{num_to_visit}: {direct_url}")
                     logger.info(f"{'─'*70}")
                     
-                    # تاخیر بین صفحات
                     if i > 1:
                         delay = random.uniform(*BETWEEN_PAGES_DELAY)
                         logger.info(f"⏳ تاخیر {delay:.1f}s...")
                         await asyncio.sleep(delay)
                     
-                    # بازدید طبیعی از صفحه
                     success = await visit_page_naturally(
                         page, 
                         direct_url, 
@@ -193,7 +208,6 @@ async def process_device(
                         logger.warning(f"⚠️ بازدید از {direct_url} ناموفق بود")
                         continue
                     
-                    # بازدید از لینک‌های داخلی (70% شانس)
                     if random.random() < 0.7:
                         logger.info("\n🔗 شروع بازدید از لینک‌های داخلی...")
                         
