@@ -3,6 +3,7 @@ from playwright.async_api import Page
 from config.general_settings import CAPTCHA_MAX_WAIT
 from core.logger import logger
 
+
 async def handle_captcha(page: Page, engine_name: str) -> bool:
     try:
         # کد حل کپچا، اگر لازم

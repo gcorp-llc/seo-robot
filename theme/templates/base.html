@@ -1,0 +1,65 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <title>SEO Bot Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% tailwind_css %}
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            font-family: Vazirmatn, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+        }
+        .ios-card {
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        .btn-ios {
+            border-radius: 12px;
+            transition: all 0.2s;
+        }
+        .btn-ios:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <header class="flex justify-between items-center mb-10 glass p-6 ios-card">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800">ربات SEO پیشرفته</h1>
+                <p class="text-gray-500">مدیریت هوشمند بازدید و رتبه سایت</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="/admin/" class="btn btn-ghost btn-ios">پنل مدیریت</a>
+                <div class="avatar online placeholder">
+                    <div class="bg-neutral text-neutral-content rounded-full w-12">
+                        <span>AD</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="mt-20 text-center text-gray-500 pb-10">
+            <p>© 2025 طراحی شده با سبک iOS 18</p>
+        </footer>
+    </div>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

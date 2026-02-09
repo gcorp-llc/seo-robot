@@ -22,11 +22,11 @@ from network.proxy_config_model import ProxyConfig, ProxyType
 from network.proxy_manager import proxy_manager
 
 __all__ = [
-    'TARGETS',
-    'USE_PROXY_ROTATION',
-    'DEVICES',
-    'MANUAL_PROXIES',
-    'ProxyConfig',
-    'ProxyType',
-    'proxy_manager',
+    "TARGETS",
+    "USE_PROXY_ROTATION",
+    "DEVICES",
+    "MANUAL_PROXIES",
+    "ProxyConfig",
+    "ProxyType",
+    "proxy_manager",
 ]

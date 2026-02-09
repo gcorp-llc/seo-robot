@@ -1,132 +1,75 @@
-# ربات SEO پیشرفته — شبیه‌سازی بازدید انسانی
+# پنل مدیریت ربات SEO پیشرفته (Django Edition)
 
-این پروژه یک ربات هوشمند SEO است که با استفاده از Playwright مرورگر را به صورت خودکار کنترل می‌کند. هدف شبیه‌سازی رفتار انسانی واقعی برای تعامل با موتورهای جستجو و بازدید صفحات است.
-
-> هشدار: فقط برای استفاده قانونی و با رعایت قوانین سایت‌ها و قوانین محلی استفاده شود.
+این پروژه نسخه توسعه‌یافته ربات SEO است که اکنون با فریمورک Django ادغام شده و دارای پنل مدیریت گرافیکی، سیستم صف وظایف (Background Tasks) و رابط کاربری مدرن با سبک iOS 18 است.
 
 ---
 
-## ویژگی‌های کلیدی
-- موتورهای جستجو: Google, Bing, DuckDuckGo, Yandex, Yahoo, Brave, Ecosia, Startpage
-- شبیه‌سازی انسانی: حرکت موس، اسکرول طبیعی، کلیک تصادفی، تأخیر هوشمند
-- مدیریت پروکسی: بارگذاری از CSV، بررسی سلامت، چرخش خودکار، علامت‌گذاری شکست
-- شبیه‌سازی دستگاه: iPhone, Pixel, Galaxy با تنظیمات واقعی
-- کرال عمیق: استخراج و بازدید لینک‌های داخلی تا عمق مشخص
-- استراتژی‌های جایگزین: استخراج URL از متن، متا، اسکریپت، تصویر در صورت عدم کارکرد سلکتور
-- مانیتورینگ عملکرد: آمار موفقیت، زمان، خطا، گزارش JSON
-- سیستم لاگ پیشرفته: Rotating File Handlers
-- پیکربندی ماژولار: تنظیمات در پوشه `config/`
+## ویژگی‌های جدید
+- **فریمورک Django:** مدیریت کامل دیتابیس و تنظیمات از طریق وب.
+- **پنل مدیریت اختصاصی:** قابلیت تعریف سایت‌ها، کلمات کلیدی و موتورهای جستجو.
+- **رابط کاربری iOS 18:** طراحی شیشه‌ای (Glassmorphism) با استفاده از Tailwind CSS و DaisyUI.
+- **سیستم Background Tasks:** اجرای عملیات ربات در پس‌زمینه با استفاده از Django-Q.
+- **مدیریت پروکسی و دستگاه:** ثبت منابع پروکسی و لیست دستگاه‌ها در دیتابیس.
+- **گزارش‌گیری لحظه‌ای:** مشاهده لاگ‌ها و پیشرفت عملیات در داشبورد.
+
+---
+
+## اطلاعات ورود به پنل مدیریت
+برای دسترسی به بخش مدیریت و تنظیمات:
+- **آدرس:** `http://localhost:8000/admin/`
+- **نام کاربری:** `admin`
+- **رمز عبور:** `admin123`
 
 ---
 
 ## نصب و راه‌اندازی
 
-1. کلون مخزن و ورود به پوشه پروژه:
-    ```bash
-    git clone https://github.com/gcorp-llc/seo-robot.git
-    cd seo-bot
-    ```
+1. **نصب وابستگی‌ها:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-2. نصب وابستگی‌ها (Python 3.10+):
-    ```bash
-    pip install -r requirements.txt
-    ```
+2. **نصب مرورگرهای Playwright:**
+   ```bash
+   playwright install chromium
+   ```
 
-# 3. نصب مرورگرهای Playwright
-playwright install
+3. **راه‌اندازی دیتابیس و داده‌های اولیه:**
+   ```bash
+   python manage.py migrate
+   python setup_data.py
+   ```
 
-# 4. قرار دادن فایل پروکسی
-# فایل proxies-export.csv را در ریشه پروژه قرار دهید
-# ستون‌ها: IP, Port, Protocol, Country, Latency
+4. **اجرای سرور اصلی:**
+   ```bash
+   python manage.py runserver
+   ```
 
-فایل .env (اختیاری)
-
-HEADLESS=true
-LOG_LEVEL=INFO
-USE_PROXY_ROTATION=true
-INCLUDE_NO_PROXY=false
-MAX_RESULTS_TO_CHECK=30
-
-نحوه اجرا
-bashpython main.py
-تمام لاگ‌ها در پوشه logs/ ذخیره می‌شوند.
-گزارش عملکرد در فایل performance_report_*.json ذخیره می‌شود.
-
-## نقشه فایل‌ها و پوشه‌ها (Project Structure)
-
-```
-seo-bot/
-├── main.py                        # نقطه ورود برنامه
-├── proxies-export.csv             # لیست پروکسی‌ها (IP,Port,Protocol,Country,Latency)
-├── README.md                      # راهنمای پروژه
-├── requirements.txt               # وابستگی‌ها
-├── config/
-│   ├── __init__.py                # صادرات تنظیمات
-│   ├── main_config.py             # بارگذاری .env و تنظیمات عمومی
-│   ├── proxy_config.py            # ProxyType, ProxyConfig, ProxyManager
-│   ├── proxy_loader.py            # بارگذاری و فیلتر پروکسی از CSV
-│   ├── search_engines.py          # تنظیمات موتورهای جستجو و سلکتورها
-│   ├── targets.py                 # TARGETS، کوئری‌ها و URLها
-│   ├── human_settings.py          # تنظیمات رفتار انسانی
-│   └── general_settings.py        # HEADLESS، TIMEOUT، DEVICES، USER-AGENTS
-├── core/
-│   ├── __init__.py
-│   ├── logger.py                  # راه‌اندازی لاگینگ (RotatingFileHandler)
-│   ├── error_handler.py           # مدیریت خطا و retry
-│   ├── performance_monitor.py     # آمار و گزارش‌گیری
-│   └── utils.py                   # توابع کمکی
-├── browser/
-│   ├── __init__.py
-│   ├── pool.py                    # استخر مرورگر (reuse, cleanup)
-│   └── launcher.py                # راه‌اندازی مرورگر با پروکسی و آرگومان‌ها
-├── crawler/
-│   ├── __init__.py
-│   ├── search_engine.py           # جستجو در موتور و استخراج نتایج
-│   ├── page_visit.py              # بازدید طبیعی صفحات (اسکرول، کلیک، تعامل)
-│   ├── link_extractor.py          # استخراج لینک‌های داخلی
-│   ├── fallback_extractors.py     # استخراج از متن/متا/اسکریپت/تصاویر
-│   └── interceptors.py            # مسدودسازی منابع غیرضروری
-├── devices/
-│   ├── __init__.py
-│   └── processor.py               # پردازش هر دستگاه: context, tracing, scenarios
-├── human/
-│   ├── behavior.py                # حرکت موس، کلیک‌های انسانی
-│   ├── captcha.py                 # مدیریت CAPTCHA
-│   └── actions.py                 # اسکرول و تعاملات
-├── network/
-│   ├── proxy_checker.py           # بررسی سلامت پروکسی‌ها (httpbin، کش)
-│   ├── proxy_selector.py          # انتخاب پروکسی بر اساس معیارها
-│   └── proxy_utils.py             # ساخت و اعتبارسنجی پروکسی از CSV
-└── logs/
-    ├── seo_bot.log
-    ├── seo_bot_errors.log
-    ├── seo_bot_debug.log
-    └── seo_bot_performance.log
-```
+5. **اجرای ورکر (برای انجام عملیات ربات):**
+   در یک ترمینال جداگانه دستور زیر را اجرا کنید:
+   ```bash
+   python manage.py qcluster
+   ```
 
 ---
 
-## نکات مهم
-- فایل `proxies-export.csv` باید در ریشه پروژه باشد.
-- از پروکسی‌های با کیفیت و با تأخیر کم استفاده کنید.
-- برای تست محلی از `HEADLESS=false` استفاده کنید تا مرورگر قابل مشاهده باشد.
-- اجرای بی‌رویه و بدون رعایت قوانین سایت‌ها ممکن است منجر به بلاک شدن یا پیامدهای قانونی شود.
+## نحوه استفاده
+1. وارد پنل مدیریت شوید.
+2. در بخش `Site configs` آدرس سایت هدف و بخش مقالات را وارد کنید.
+3. کلمات کلیدی و موتورهای جستجوی فعال را تنظیم کنید.
+4. در داشبورد اصلی (`http://localhost:8000/`) روی دکمه "شروع عملیات" کلیک کنید.
 
 ---
 
-## وابستگی‌ها (مختصر)
-- playwright
-- aiohttp
-- python-dotenv (اختیاری)
-
-نصب:
-```bash
-pip install -r requirements.txt
-playwright install
-```
+## ساختار پروژه (نسخه جدید)
+- `seo_admin/`: تنظیمات اصلی پروژه جنگو.
+- `bot_manager/`: اپلیکیشن مدیریت ربات (مدل‌ها، ویوها، تسک‌ها).
+- `bot_manager/tasks.py`: منطق اصلی ربات SEO (Refactored).
+- `bot_manager/templates/`: قالب‌های رابط کاربری با سبک iOS 18.
+- `theme/`: تنظیمات Tailwind CSS.
+- `db.sqlite3`: دیتابیس پروژه.
 
 ---
 
-## مجوز
-MIT — استفاده مسئولانه و قانونی الزامی است.
-
+## توسعه‌دهنده
+طراحی و پیاده‌سازی شده با سبک مدرن iOS 18 در سال 2025.

@@ -5,6 +5,7 @@ MODES = {
 DEEP_CRAWL_MAX_LINKS = 5
 DEEP_CRAWL_MAX_DEPTH = 2
 
+
 def get_deep_crawl_selectors(target_domain: str) -> list:
     if not target_domain:
         return []
@@ -14,9 +15,10 @@ def get_deep_crawl_selectors(target_domain: str) -> list:
         'nav a[href^="/"]',
         'main a[href^="/"]',
         'div.content a[href^="/"]',
-        'a.internal-link',
+        "a.internal-link",
         'a[href^="/"]:not([href^="//"])',
     ]
+
 
 FALLBACK_STRATEGIES = {
     "extract_from_text": True,
@@ -28,7 +30,7 @@ FALLBACK_STRATEGIES = {
     "extract_from_scripts": True,
     "try_alternative_selectors": True,
     "use_aria_labels": True,
-    "extract_from_images": True
+    "extract_from_images": True,
 }
 
 MAX_SCROLL_ROUNDS = 5

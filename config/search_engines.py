@@ -3,6 +3,7 @@ from typing import List, Dict
 
 from .general_settings import SEARCH_ENGINES_ENABLED
 
+
 def get_search_engines(query: str) -> List[Dict]:
     encoded_query = quote_plus(query)
     all_engines = [
@@ -21,7 +22,7 @@ def get_search_engines(query: str) -> List[Dict]:
                 'div.cite a[href^="http"]:not([href*="google.com"])',
             ],
             "exclude_domains": ["google.com", "googleusercontent.com", "gstatic.com"],
-            "wait_for_selector": 'div#search, div#rso',
+            "wait_for_selector": "div#search, div#rso",
             "priority_selectors": [
                 'div#search a[href^="http"]:not([href*="google.com"])',
                 'div.g a[href^="http"]:not([href*="google.com"])',
@@ -40,7 +41,7 @@ def get_search_engines(query: str) -> List[Dict]:
                 'div.b_caption a[href^="http"]:not([href*="bing.com"])',
             ],
             "exclude_domains": ["bing.com", "microsoft.com"],
-            "wait_for_selector": 'li.b_algo, div#b_results',
+            "wait_for_selector": "li.b_algo, div#b_results",
             "priority_selectors": [
                 'li.b_algo h2 a[href^="http"]:not([href*="bing.com"])',
                 'div.b_title a[href^="http"]:not([href*="bing.com"])',
@@ -73,43 +74,49 @@ def get_search_engines(query: str) -> List[Dict]:
                 'li[data-cid] div.Organic h2 a.Link[href^="http"]:not([href*="yandex"])',
                 'div.serp-item div.OrganicTitle a.Link[href^="http"]:not([href*="yandex"])',
                 'h2 a[href^="http"]',
-                'div.OrganicTitle a',
-                'a.OrganicTitle-Link',
+                "div.OrganicTitle a",
+                "a.OrganicTitle-Link",
                 'div[data-fast-name="organic"] a',
                 'div.OrganicTitle a[href^="http"]',
-                'h2.OrganicTitle a',
+                "h2.OrganicTitle a",
                 'a.OrganicTitle-Link[href^="http"]',
                 'div[data-fast-name="organic"] a[href^="http"]',
-                'div.OrganicTitle-Link a',
-                'h2.OrganicTitle-Link a',
+                "div.OrganicTitle-Link a",
+                "h2.OrganicTitle-Link a",
                 'div[data-cid] a[href^="http"]',
                 'a[data-fast-name="organic"]',
                 'div.Organic a[href^="http"]',
-                'li.Organic a',
+                "li.Organic a",
                 'div.OrganicTitle a[target="_blank"]',
-                'a.OrganicTitle[href^="https"]'
+                'a.OrganicTitle[href^="https"]',
             ],
-            "exclude_domains": ["yandex.com", "yandex.ru", "ya.ru", "yastatic.net", "yandex.st"],
-            "wait_for_selector": 'div.serp-list, li[data-cid], div.content__left',
+            "exclude_domains": [
+                "yandex.com",
+                "yandex.ru",
+                "ya.ru",
+                "yastatic.net",
+                "yandex.st",
+            ],
+            "wait_for_selector": "div.serp-list, li[data-cid], div.content__left",
             "priority_selectors": [
                 'li[data-cid] div.Organic h2 a.Link[href^="http"]:not([href*="yandex"])',
                 'div.serp-item div.OrganicTitle a.Link[href^="http"]:not([href*="yandex"])',
                 'h2 a[href^="http"]',
-                'div.OrganicTitle a',
-                'a.OrganicTitle-Link',
+                "div.OrganicTitle a",
+                "a.OrganicTitle-Link",
                 'div[data-fast-name="organic"] a',
                 'div.OrganicTitle a[href^="http"]',
-                'h2.OrganicTitle a',
+                "h2.OrganicTitle a",
                 'a.OrganicTitle-Link[href^="http"]',
                 'div[data-fast-name="organic"] a[href^="http"]',
-                'div.OrganicTitle-Link a',
-                'h2.OrganicTitle-Link a',
+                "div.OrganicTitle-Link a",
+                "h2.OrganicTitle-Link a",
                 'div[data-cid] a[href^="http"]',
                 'a[data-fast-name="organic"]',
                 'div.Organic a[href^="http"]',
-                'li.Organic a',
+                "li.Organic a",
                 'div.OrganicTitle a[target="_blank"]',
-                'a.OrganicTitle[href^="https"]'
+                'a.OrganicTitle[href^="https"]',
             ],
         },
         {
@@ -128,14 +135,14 @@ def get_search_engines(query: str) -> List[Dict]:
                 'div.dd a[href^="http"]:not([href*="yahoo.com"])',
                 'div.algo-sr a.ac-algo-fz[href^="http"]:not([href*="yahoo.com"])',
                 'div.compTitle a[href^="http"]:not([href*="yahoo.com"])',
-                'span.fz-15px',
+                "span.fz-15px",
                 'div.compText a[href^="http"]:not([href*="yahoo.com"])',
                 'div#main a[href^="http"]:not([href*="yahoo.com"])',
                 'div#results a[href^="http"]:not([href*="yahoo.com"])',
                 'div#mainline a[href^="http"]:not([href*="yahoo.com"])',
             ],
             "exclude_domains": ["yahoo.com", "search.yahoo.com", "yahoo.net"],
-            "wait_for_selector": 'div#web, div.searchCenterMiddle, div#results',
+            "wait_for_selector": "div#web, div.searchCenterMiddle, div#results",
             "priority_selectors": [
                 'div#web ol li div.dd.algo h3.title a[href^="http"]:not([href*="yahoo.com"])',
                 'div#results div.algo h3 a[href^="http"]:not([href*="yahoo.com"])',
@@ -184,11 +191,11 @@ def get_search_engines(query: str) -> List[Dict]:
                 'div.results a[href^="http"]:not([href*="ecosia.org"])',
                 'main a[href^="http"]:not([href*="ecosia.org"])',
                 'section a[href^="http"]:not([href*="ecosia.org"])',
-                'div.result-url',
-                'span.result-url',
+                "div.result-url",
+                "span.result-url",
             ],
             "exclude_domains": ["ecosia.org", "bing.com"],
-            "wait_for_selector": 'section.mainline, div.result, div.web-results',
+            "wait_for_selector": "section.mainline, div.result, div.web-results",
             "priority_selectors": [
                 'section.mainline div.result a.result-url[href^="http"]:not([href*="ecosia.org"])',
                 'div[data-testid="result"] a[href^="http"]:not([href*="ecosia.org"])',
@@ -203,7 +210,7 @@ def get_search_engines(query: str) -> List[Dict]:
                 'h3.result__title a[href^="http"]:not([href*="ecosia.org"])',
                 'a.result-url[target="_blank"]:not([href*="ecosia.org"])',
                 'div[data-result] a[href^="http"]:not([href*="ecosia.org"])',
-                'section a[href^="http"]:not([href*="ecosia.org"])'
+                'section a[href^="http"]:not([href*="ecosia.org"])',
             ],
         },
         {
@@ -220,7 +227,7 @@ def get_search_engines(query: str) -> List[Dict]:
                 'div#results a[href^="http"]:not([href*="startpage.com"])',
             ],
             "exclude_domains": ["startpage.com", "startmail.com"],
-            "wait_for_selector": 'section.w-gl, div.w-gl__result, div#results',
+            "wait_for_selector": "section.w-gl, div.w-gl__result, div#results",
             "priority_selectors": [
                 'section.w-gl div.w-gl__result a[href^="http"]:not([href*="startpage.com"])',
                 'div.w-gl__result a.result-link[href^="http"]:not([href*="startpage.com"])',
@@ -233,9 +240,9 @@ def get_search_engines(query: str) -> List[Dict]:
                 'main a[href^="http"]:not([href*="startpage.com"])',
                 'div.search-result a[target="_blank"]:not([href*="startpage.com"])',
                 'article.search-result a[href^="https"]:not([href*="startpage.com"])',
-                'a.result-link[target="_blank"]:not([href*="startpage.com"])'
+                'a.result-link[target="_blank"]:not([href*="startpage.com"])',
             ],
         },
     ]
-    
+
     return [engine for engine in all_engines if engine.get("enabled", False)]
