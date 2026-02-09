@@ -2,6 +2,7 @@
 """
 مدیریت پروکسی - بدون تغییر
 """
+
 import asyncio
 import logging
 from typing import List, Optional, Any
@@ -16,6 +17,7 @@ except Exception:
     requests = None
 
 _LOG = logging.getLogger(__name__)
+
 
 class ProxyManager:
     def __init__(self):
@@ -58,6 +60,7 @@ class ProxyManager:
     def get_random_proxy(self) -> Optional[ProxyConfig]:
         """پروکسی تصادفی"""
         import random
+
         if not self.active_proxies:
             return None
         return random.choice(self.active_proxies)
@@ -67,7 +70,9 @@ class ProxyManager:
         for p in self.proxies:
             try:
                 if isinstance(p, ProxyConfig):
-                    if p.url == getattr(url_or_obj, "url", url_or_obj) or p.ip == getattr(url_or_obj, "ip", None):
+                    if p.url == getattr(
+                        url_or_obj, "url", url_or_obj
+                    ) or p.ip == getattr(url_or_obj, "ip", None):
                         p.mark_failed()
                         if not p.is_active and p in self.active_proxies:
                             self.active_proxies.remove(p)
@@ -80,7 +85,9 @@ class ProxyManager:
         for p in self.proxies:
             try:
                 if isinstance(p, ProxyConfig):
-                    if p.url == getattr(url_or_obj, "url", url_or_obj) or p.ip == getattr(url_or_obj, "ip", None):
+                    if p.url == getattr(
+                        url_or_obj, "url", url_or_obj
+                    ) or p.ip == getattr(url_or_obj, "ip", None):
                         p.mark_success()
                         if p.is_active and p not in self.active_proxies:
                             self.active_proxies.append(p)
@@ -88,7 +95,12 @@ class ProxyManager:
             except Exception:
                 continue
 
-    async def run_proxy_validation(self, concurrency: int = 50, test_url: str = "http://httpbin.org/ip", timeout: int = 6):
+    async def run_proxy_validation(
+        self,
+        concurrency: int = 50,
+        test_url: str = "http://httpbin.org/ip",
+        timeout: int = 6,
+    ):
         """بررسی پروکسی‌ها با نتایج تفصیلی"""
         if requests is None:
             _LOG.warning("requests module not available")
@@ -101,50 +113,53 @@ class ProxyManager:
 
         loop = asyncio.get_running_loop()
         sem = asyncio.Semaphore(concurrency)
-        
-        results = {
-            'working': [],
-            'failed': [],
-            'timeout': [],
-            'errors': []
-        }
+
+        results = {"working": [], "failed": [], "timeout": [], "errors": []}
 
         async def _check(pc: ProxyConfig):
             async with sem:
-                return await loop.run_in_executor(None, _sync_check, pc, test_url, timeout)
+                return await loop.run_in_executor(
+                    None, _sync_check, pc, test_url, timeout
+                )
 
         def _sync_check(pc: ProxyConfig, test_url: str, timeout: int) -> tuple:
             try:
                 proxy_url = f"{pc.protocol.value}://{pc.ip}:{pc.port}"
                 proxies = {"http": proxy_url, "https": proxy_url}
                 resp = requests.get(test_url, proxies=proxies, timeout=timeout)
-                
+
                 if resp.status_code == 200:
                     try:
                         data = resp.json()
-                        return ('working', pc, {
-                            'proxy': pc.url,
-                            'time': resp.elapsed.total_seconds() * 1000,
-                            'ip': data.get('origin', 'Unknown')
-                        })
+                        return (
+                            "working",
+                            pc,
+                            {
+                                "proxy": pc.url,
+                                "time": resp.elapsed.total_seconds() * 1000,
+                                "ip": data.get("origin", "Unknown"),
+                            },
+                        )
                     except:
-                        return ('working', pc, {
-                            'proxy': pc.url,
-                            'time': resp.elapsed.total_seconds() * 1000,
-                            'ip': 'Unknown'
-                        })
+                        return (
+                            "working",
+                            pc,
+                            {
+                                "proxy": pc.url,
+                                "time": resp.elapsed.total_seconds() * 1000,
+                                "ip": "Unknown",
+                            },
+                        )
                 else:
-                    return ('failed', pc, {
-                        'proxy': pc.url,
-                        'error': f"Status {resp.status_code}"
-                    })
+                    return (
+                        "failed",
+                        pc,
+                        {"proxy": pc.url, "error": f"Status {resp.status_code}"},
+                    )
             except asyncio.TimeoutError:
-                return ('timeout', pc, pc.url)
+                return ("timeout", pc, pc.url)
             except Exception as e:
-                return ('error', pc, {
-                    'proxy': pc.url,
-                    'error': str(e)[:100]
-                })
+                return ("error", pc, {"proxy": pc.url, "error": str(e)[:100]})
 
         tasks = [asyncio.create_task(_check(pc)) for pc in targets]
         responses = await asyncio.gather(*tasks, return_exceptions=True)
@@ -153,31 +168,34 @@ class ProxyManager:
         for response in responses:
             if isinstance(response, Exception):
                 continue
-            
+
             status, pc, data = response
-            
-            if status == 'working':
-                results['working'].append(data)
+
+            if status == "working":
+                results["working"].append(data)
                 if pc not in self.active_proxies:
                     self.active_proxies.append(pc)
-            elif status == 'failed':
-                results['failed'].append(data)
+            elif status == "failed":
+                results["failed"].append(data)
                 pc.mark_failed()
                 if pc in self.active_proxies:
                     self.active_proxies.remove(pc)
-            elif status == 'timeout':
-                results['timeout'].append(data)
+            elif status == "timeout":
+                results["timeout"].append(data)
                 pc.mark_failed()
                 if pc in self.active_proxies:
                     self.active_proxies.remove(pc)
-            elif status == 'error':
-                results['errors'].append(data)
+            elif status == "error":
+                results["errors"].append(data)
                 pc.mark_failed()
                 if pc in self.active_proxies:
                     self.active_proxies.remove(pc)
 
-        _LOG.info(f"Proxy validation complete: {len(results['working'])}/{len(targets)} working")
+        _LOG.info(
+            f"Proxy validation complete: {len(results['working'])}/{len(targets)} working"
+        )
         return results
+
 
 # Instance
 proxy_manager = ProxyManager()

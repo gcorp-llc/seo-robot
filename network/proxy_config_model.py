@@ -2,16 +2,19 @@
 """
 مدل‌های داده پروکسی - استخراج شده از config/proxy_config.py
 """
+
 from dataclasses import dataclass
 from enum import Enum
 from typing import Optional, Dict, Any
 from datetime import datetime
+
 
 class ProxyType(Enum):
     HTTP = "http"
     HTTPS = "https"
     SOCKS4 = "socks4"
     SOCKS5 = "socks5"
+
 
 @dataclass
 class ProxyConfig:
@@ -25,14 +28,14 @@ class ProxyConfig:
     failure_count: int = 0
     last_used: Optional[str] = None
     success_rate: float = 1.0
-    
+
     def __post_init__(self):
         # نرمال‌سازی ایمن protocol
         if isinstance(self.protocol, str):
             s = self.protocol.strip().lower()
-            if s.endswith('://'):
+            if s.endswith("://"):
                 s = s[:-3]
-            if s.endswith(':'):
+            if s.endswith(":"):
                 s = s[:-1]
             try:
                 self.protocol = ProxyType(s)
@@ -49,26 +52,26 @@ class ProxyConfig:
                 self.port = 0
         if isinstance(self.latency, str):
             try:
-                self.latency = int(self.latency.replace(' ms', '').strip())
+                self.latency = int(self.latency.replace(" ms", "").strip())
             except Exception:
                 self.latency = 0
 
     def to_dict(self) -> Dict[str, Any]:
         return {
-            'url': self.url,
-            'ip': self.ip,
-            'port': self.port,
-            'protocol': self.protocol.value,
-            'country': self.country,
-            'latency': self.latency,
-            'is_active': self.is_active,
-            'failure_count': self.failure_count,
-            'last_used': self.last_used,
-            'success_rate': self.success_rate
+            "url": self.url,
+            "ip": self.ip,
+            "port": self.port,
+            "protocol": self.protocol.value,
+            "country": self.country,
+            "latency": self.latency,
+            "is_active": self.is_active,
+            "failure_count": self.failure_count,
+            "last_used": self.last_used,
+            "success_rate": self.success_rate,
         }
-    
+
     @classmethod
-    def from_dict(cls, data: Dict[str, Any]) -> 'ProxyConfig':
+    def from_dict(cls, data: Dict[str, Any]) -> "ProxyConfig":
         return cls(**data)
 
     def mark_failed(self):

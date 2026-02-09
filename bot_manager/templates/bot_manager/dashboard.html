@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Stats Column -->
+    <div class="md:col-span-1 space-y-6">
+        <div class="glass p-6 ios-card">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">وضعیت کلی</h2>
+                <button onclick="syncProxies()" class="btn btn-ghost btn-xs btn-ios">همگام‌سازی پروکسی</button>
+            </div>
+            <div class="stats stats-vertical shadow w-full bg-transparent">
+                <div class="stat">
+                    <div class="stat-title">پروکسی‌های فعال</div>
+                    <div class="stat-value text-primary">{{ active_proxies }}/{{ proxies_count }}</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-title">سایت‌های هدف</div>
+                    <div class="stat-value">{{ sites.count }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass p-6 ios-card">
+            <h2 class="text-xl font-semibold mb-4">موتورهای جستجو</h2>
+            <div class="space-y-2">
+                {% for engine in engines %}
+                <div class="flex justify-between items-center">
+                    <span>{{ engine.name }}</span>
+                    {% if engine.is_active %}
+                    <span class="badge badge-success badge-sm">فعال</span>
+                    {% else %}
+                    <span class="badge badge-ghost badge-sm">غیرفعال</span>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Column -->
+    <div class="md:col-span-2 space-y-6">
+        <div class="glass p-6 ios-card">
+            <h2 class="text-xl font-semibold mb-4">سایت‌های هدف</h2>
+            <div class="overflow-x-auto">
+                <table class="table w-full">
+                    <thead>
+                        <tr>
+                            <th>نام سایت</th>
+                            <th>آدرس</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for site in sites %}
+                        <tr>
+                            <td>{{ site.name }}</td>
+                            <td class="text-sm text-gray-500">{{ site.main_url }}</td>
+                            <td>
+                                <a href="{% url 'start_bot' site.id %}" class="btn btn-primary btn-sm btn-ios">شروع عملیات</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="glass p-6 ios-card">
+            <h2 class="text-xl font-semibold mb-4">آخرین عملیات‌ها</h2>
+            <div class="space-y-4">
+                {% for job in jobs %}
+                <div class="p-4 border border-gray-100 rounded-2xl bg-white bg-opacity-40" id="job-{{ job.id }}">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-medium">{{ job.site.name }}</span>
+                        <span class="badge {% if job.status == 'completed' %}badge-success{% elif job.status == 'running' %}badge-info{% elif job.status == 'failed' %}badge-error{% else %}badge-ghost{% endif %} status-text">
+                            {{ job.get_status_display }}
+                        </span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+                        <div class="bg-blue-600 h-2.5 rounded-full progress-bar" style="width: {{ job.progress }}%"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-500">
+                        <span class="step-text">{{ job.current_step }}</span>
+                        <span>{{ job.started_at|timesince }} پیش</span>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center text-gray-400 py-4">هنوز هیچ عملیاتی انجام نشده است.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Simple polling for job status
+    function updateJobs() {
+        const runningJobs = document.querySelectorAll('.badge-info');
+        runningJobs.forEach(badge => {
+            const jobId = badge.closest('[id^="job-"]').id.split('-')[1];
+            fetch(`/job-status/${jobId}/`)
+                .then(response => response.json())
+                .then(data => {
+                    const jobElem = document.getElementById(`job-${jobId}`);
+                    jobElem.querySelector('.status-text').innerText = data.status;
+                    jobElem.querySelector('.progress-bar').style.width = data.progress + '%';
+                    jobElem.querySelector('.step-text').innerText = data.current_step;
+
+                    if (data.finished) {
+                        location.reload(); // Refresh to update badges and order
+                    }
+                });
+        });
+    }
+
+    setInterval(updateJobs, 3000);
+
+    function syncProxies() {
+        fetch("{% url 'proxy_sync' %}")
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            });
+    }
+</script>
+{% endblock %}

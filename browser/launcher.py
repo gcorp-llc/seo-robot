@@ -8,80 +8,69 @@ from core.logger import logger
 
 
 async def launch_browser_with_proxy(
-    playwright: Playwright, 
-    proxy_config: Optional[ProxyConfig] = None
+    playwright: Playwright, proxy_config: Optional[ProxyConfig] = None
 ) -> Browser:
     """
     راه‌اندازی مرورگر Chromium با تنظیمات Anti-Detection پیشرفته
-    
+
     Args:
         playwright: نمونه Playwright
         proxy_config: پیکربندی پروکسی (اختیاری)
-    
+
     Returns:
         Browser: نمونه مرورگر راه‌اندازی شده
-    
+
     ✅ ویژگی‌های کلیدی:
     - حذف تمام علائم automation
     - استفاده از channel="chrome" برای fingerprint طبیعی
     - آرگومان‌های بهینه شده برای عدم شناسایی
     - پشتیبانی از پروکسی با authentication
     """
-    
+
     # ═══════════════════════════════════════════════════════════════
     # آرگومان‌های مرورگر (بدون علائم bot)
     # ═══════════════════════════════════════════════════════════════
     browser_args = [
         # ✅ مهم‌ترین: حذف AutomationControlled
-        '--disable-blink-features=AutomationControlled',
-        
+        "--disable-blink-features=AutomationControlled",
         # ✅ امنیت و sandbox
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
         # ✅ بهینه‌سازی منابع
-        '--disable-dev-shm-usage',
-        '--disable-accelerated-2d-canvas',
-        '--disable-gpu',
-        
+        "--disable-dev-shm-usage",
+        "--disable-accelerated-2d-canvas",
+        "--disable-gpu",
         # ✅ رفتار طبیعی‌تر
-        '--no-first-run',
-        '--no-zygote',
-        '--disable-background-timer-throttling',
-        '--disable-backgrounding-occluded-windows',
-        '--disable-renderer-backgrounding',
-        '--disable-infobars',
-        '--disable-breakpad',
-        
+        "--no-first-run",
+        "--no-zygote",
+        "--disable-background-timer-throttling",
+        "--disable-backgrounding-occluded-windows",
+        "--disable-renderer-backgrounding",
+        "--disable-infobars",
+        "--disable-breakpad",
         # ✅ اندازه پنجره واقعی
-        '--window-size=1920,1080',
-        
+        "--window-size=1920,1080",
         # ✅ غیرفعال‌سازی extension‌ها
-        '--disable-extensions',
-        '--disable-component-extensions-with-background-pages',
-        
+        "--disable-extensions",
+        "--disable-component-extensions-with-background-pages",
         # ✅ rendering طبیعی
-        '--font-render-hinting=none',
-        '--disable-features=TranslateUI',
-        '--disable-features=BlinkGenPropertyTrees',
-        
+        "--font-render-hinting=none",
+        "--disable-features=TranslateUI",
+        "--disable-features=BlinkGenPropertyTrees",
         # ✅ network
-        '--disable-ipc-flooding-protection',
-        '--disable-background-networking',
-        
+        "--disable-ipc-flooding-protection",
+        "--disable-background-networking",
         # ✅ برای پروکسی
-        '--proxy-bypass-list=<-loopback>',
-        
+        "--proxy-bypass-list=<-loopback>",
         # ✅ جلوگیری از leak
-        '--disable-features=AudioServiceOutOfProcess',
-        '--disable-features=IsolateOrigins',
-        '--disable-site-isolation-trials',
-        
+        "--disable-features=AudioServiceOutOfProcess",
+        "--disable-features=IsolateOrigins",
+        "--disable-site-isolation-trials",
         # ✅ WebRTC
-        '--enforce-webrtc-ip-permission-check',
-        '--force-webrtc-ip-handling-policy=default_public_interface_only',
+        "--enforce-webrtc-ip-permission-check",
+        "--force-webrtc-ip-handling-policy=default_public_interface_only",
     ]
-    
+
     # ═══════════════════════════════════════════════════════════════
     # تنظیمات پروکسی
     # ═══════════════════════════════════════════════════════════════
@@ -90,17 +79,17 @@ async def launch_browser_with_proxy(
         proxy_dict = {
             "server": proxy_config.url,
         }
-        
+
         # اضافه کردن username/password اگر موجود باشد
-        if hasattr(proxy_config, 'username') and proxy_config.username:
+        if hasattr(proxy_config, "username") and proxy_config.username:
             proxy_dict["username"] = proxy_config.username
-        if hasattr(proxy_config, 'password') and proxy_config.password:
+        if hasattr(proxy_config, "password") and proxy_config.password:
             proxy_dict["password"] = proxy_config.password
-        
+
         logger.debug(f"🔌 پروکسی فعال: {proxy_config.url}")
     else:
         logger.debug("🔌 بدون پروکسی")
-    
+
     # ═══════════════════════════════════════════════════════════════
     # راه‌اندازی مرورگر
     # ═══════════════════════════════════════════════════════════════
@@ -109,30 +98,27 @@ async def launch_browser_with_proxy(
             headless=HEADLESS,
             args=browser_args,
             proxy=proxy_dict,
-            
             # ✅ حذف --enable-automation
             ignore_default_args=[
                 "--enable-automation",
-                "--enable-blink-features=AutomationControlled"
+                "--enable-blink-features=AutomationControlled",
             ],
-            
             # ✅ استفاده از Chrome واقعی (اگر موجود باشد)
             # این به fingerprint طبیعی‌تری کمک می‌کند
             channel="chrome",  # یا "msedge" برای Microsoft Edge
-            
             # ✅ تنظیمات اضافی
             downloads_path=None,  # غیرفعال کردن دانلود خودکار
         )
-        
+
         logger.info("✅ مرورگر با موفقیت راه‌اندازی شد")
         return browser
-        
+
     except Exception as e:
         logger.error(f"❌ خطا در راه‌اندازی مرورگر: {e}")
-        
+
         # ✅ Fallback: بدون channel="chrome"
         logger.warning("🔄 تلاش مجدد بدون channel...")
-        
+
         try:
             browser = await playwright.chromium.launch(
                 headless=HEADLESS,
@@ -140,32 +126,29 @@ async def launch_browser_with_proxy(
                 proxy=proxy_dict,
                 ignore_default_args=[
                     "--enable-automation",
-                    "--enable-blink-features=AutomationControlled"
+                    "--enable-blink-features=AutomationControlled",
                 ],
             )
-            
+
             logger.info("✅ مرورگر با موفقیت راه‌اندازی شد (بدون channel)")
             return browser
-            
+
         except Exception as fallback_err:
             logger.error(f"❌ خطا در fallback: {fallback_err}")
             raise
 
 
-async def setup_stealth_context(
-    browser: Browser, 
-    **context_kwargs
-) -> BrowserContext:
+async def setup_stealth_context(browser: Browser, **context_kwargs) -> BrowserContext:
     """
     ساخت Browser Context با تنظیمات Anti-Detection کامل
-    
+
     Args:
         browser: نمونه Browser
         **context_kwargs: آرگومان‌های اضافی برای new_context
-    
+
     Returns:
         BrowserContext: context با stealth mode فعال
-    
+
     ✅ این تابع 12 تکنیک Anti-Detection اعمال می‌کند:
     1. حذف navigator.webdriver
     2. Mock کردن window.chrome
@@ -179,19 +162,19 @@ async def setup_stealth_context(
     10. Mock کردن hardwareConcurrency
     11. Mock کردن deviceMemory
     12. Mock کردن navigator.connection
-    
+
     استفاده:
         context = await setup_stealth_context(browser, user_agent="...")
         page = await context.new_page()
     """
-    
+
     # ═══════════════════════════════════════════════════════════════
     # ساخت context با تنظیمات
     # ═══════════════════════════════════════════════════════════════
     context = await browser.new_context(**context_kwargs)
-    
+
     logger.debug("🎭 اعمال تنظیمات Stealth...")
-    
+
     # ═══════════════════════════════════════════════════════════════
     # اضافه کردن init script
     # ═══════════════════════════════════════════════════════════════
@@ -555,9 +538,9 @@ async def setup_stealth_context(
     console.log('🔌 navigator.plugins.length:', navigator.plugins.length);
 })();
     """)
-    
+
     logger.info("✅ Stealth context ساخته شد")
-    
+
     return context
 
 
@@ -567,40 +550,40 @@ async def setup_stealth_context(
 async def test_stealth_mode(page):
     """
     تست اینکه آیا stealth mode کار می‌کند
-    
+
     استفاده:
         from browser.launcher import test_stealth_mode
         await test_stealth_mode(page)
     """
     logger.info("🧪 تست Stealth Mode...")
-    
+
     # تست 1: navigator.webdriver
     webdriver = await page.evaluate("() => navigator.webdriver")
     logger.info(f"  🤖 navigator.webdriver: {webdriver}")
-    
-    if webdriver is None or webdriver is False or str(webdriver) == 'undefined':
+
+    if webdriver is None or webdriver is False or str(webdriver) == "undefined":
         logger.info("    ✅ PASS - webdriver مخفی شده")
     else:
         logger.warning("    ❌ FAIL - webdriver قابل شناسایی است!")
-    
+
     # تست 2: window.chrome
     has_chrome = await page.evaluate("() => typeof window.chrome !== 'undefined'")
     logger.info(f"  🌐 window.chrome exists: {has_chrome}")
-    
+
     if has_chrome:
         logger.info("    ✅ PASS - window.chrome موجود است")
     else:
         logger.warning("    ⚠️ WARN - window.chrome موجود نیست")
-    
+
     # تست 3: navigator.plugins
     plugins_length = await page.evaluate("() => navigator.plugins.length")
     logger.info(f"  🔌 navigator.plugins.length: {plugins_length}")
-    
+
     if plugins_length > 0:
         logger.info("    ✅ PASS - plugins موجود است")
     else:
         logger.warning("    ❌ FAIL - هیچ plugin موجود نیست!")
-    
+
     # تست 4: canvas fingerprint
     canvas_test = await page.evaluate("""
         () => {
@@ -613,7 +596,7 @@ async def test_stealth_mode(page):
         }
     """)
     logger.info(f"  🎨 Canvas fingerprint: {canvas_test}")
-    
+
     # تست 5: WebGL
     webgl_vendor = await page.evaluate("""
         () => {
@@ -624,5 +607,5 @@ async def test_stealth_mode(page):
         }
     """)
     logger.info(f"  🎮 WebGL vendor: {webgl_vendor}")
-    
+
     logger.info("✅ تست Stealth Mode کامل شد")
