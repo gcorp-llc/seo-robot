@@ -1,6 +1,7 @@
 import random
 import asyncio
 from playwright.async_api import Page
+from .actions import move_mouse_bezier, random_page_interactions, scroll_page_naturally, handle_common_popups
 
 from config.human_settings import (
     MOUSE_MOVEMENTS_RANGE,
@@ -9,116 +10,69 @@ from config.human_settings import (
     INTERACTION_DELAY_RANGE,
 )
 
-
 async def random_interactions(page: Page):
-    """تعاملات تصادفی کامل با صفحه: موس، کلیک، اسکرول"""
+    """Full natural interaction set."""
     try:
-        # 1. حرکات تصادفی موس
+        # Dismiss popups first
+        await handle_common_popups(page)
+
+        # Random mouse movements
         num_movements = random.randint(*MOUSE_MOVEMENTS_RANGE)
-
         for _ in range(num_movements):
-            x = random.randint(50, 1000)
-            y = random.randint(50, 800)
-
-            # حرکت موس به صورت نرم
-            steps = random.randint(10, 25)
-            await page.mouse.move(x, y, steps=steps)
-
-            # تاخیر بین حرکات
+            tx = random.randint(50, 1000)
+            ty = random.randint(50, 800)
+            await move_mouse_bezier(page, tx, ty)
             await asyncio.sleep(random.uniform(*INTERACTION_DELAY_RANGE))
 
-        # 2. کلیک تصادفی روی المان‌ها
+        # Random clicks on non-navigation elements
         if random.random() < CLICK_CHANCE:
-            try:
-                # پیدا کردن المان‌های قابل کلیک (بدون لینک‌ها)
-                clickable_elements = await page.query_selector_all(
-                    "button:not([type='submit']), [role='button'], div[onclick], span[onclick]"
-                )
+            clickable = await page.query_selector_all("div[id], span, label")
+            if clickable:
+                target = random.choice(clickable)
+                if await target.is_visible():
+                    box = await target.bounding_box()
+                    if box and box['width'] < 300: # Don't click huge containers
+                        await move_mouse_bezier(page, box['x']+box['width']/2, box['y']+box['height']/2)
+                        await page.mouse.click(box['x']+box['width']/2, box['y']+box['height']/2)
+                        await asyncio.sleep(random.uniform(1.0, 2.0))
 
-                if clickable_elements and len(clickable_elements) > 0:
-                    element = random.choice(clickable_elements)
+        # Random interactions (hover, drag)
+        await random_page_interactions(page)
 
-                    # اطمینان از اینکه المان قابل مشاهده است
-                    if await element.is_visible():
-                        await element.hover()
-                        await asyncio.sleep(random.uniform(0.3, 0.8))
-                        await element.click(force=True)
-                        await asyncio.sleep(random.uniform(1.0, 2.5))
-            except Exception:
-                # اگر کلیک ناموفق بود، ادامه بده
-                pass
-
-        # 3. بازگشت به بالای صفحه
+        # Back to top?
         if random.random() < BACK_TO_TOP_CHANCE:
-            try:
-                # اسکرول به بالا با انیمیشن
-                await page.evaluate("window.scrollTo({top: 0, behavior: 'smooth'})")
-                await asyncio.sleep(random.uniform(1.5, 3.0))
-            except Exception:
-                pass
+            await page.evaluate("window.scrollTo({top: 0, behavior: 'smooth'})")
+            await asyncio.sleep(random.uniform(1.5, 3.0))
 
-        # 4. هاور تصادفی روی المان‌ها
-        if random.random() < 0.5:  # 50% شانس
-            try:
-                hoverable = await page.query_selector_all("a, img, div, p, h1, h2, h3")
-                if hoverable and len(hoverable) > 0:
-                    for _ in range(random.randint(1, 3)):
-                        element = random.choice(hoverable)
-                        if await element.is_visible():
-                            await element.hover()
-                            await asyncio.sleep(random.uniform(0.5, 1.5))
-            except Exception:
-                pass
-
-    except Exception as e:
-        # لاگ نکن، فقط ادامه بده
+    except Exception:
         pass
 
-
 async def human_reading_behavior(page: Page, duration_seconds: float = None):
-    """
-    شبیه‌سازی رفتار خواندن انسان:
-    - اسکرول آهسته
-    - توقف در بخش‌های مختلف
-    - حرکت موس
-    """
+    """Simulates a human reading a page."""
     if duration_seconds is None:
-        duration_seconds = random.uniform(10, 25)
+        duration_seconds = random.uniform(15, 40) # Increased duration
 
+    start_time = asyncio.get_event_loop().time()
     try:
-        # تقسیم زمان به چند بخش
-        num_sections = random.randint(3, 6)
-        time_per_section = duration_seconds / num_sections
+        while (asyncio.get_event_loop().time() - start_time) < duration_seconds:
+            # Chance to scroll
+            if random.random() < 0.7:
+                scroll_amount = random.randint(150, 400)
+                await page.evaluate(f"window.scrollBy({{top: {scroll_amount}, behavior: 'smooth'}})")
+                await asyncio.sleep(random.uniform(2, 5))
 
-        for i in range(num_sections):
-            # اسکرول به پایین
-            scroll_amount = random.randint(200, 500)
-            await page.evaluate(
-                f"window.scrollBy({{top: {scroll_amount}, behavior: 'smooth'}})"
-            )
+            # Chance to move mouse
+            if random.random() < 0.4:
+                tx = random.randint(100, 900)
+                ty = random.randint(100, 700)
+                await move_mouse_bezier(page, tx, ty)
 
-            # توقف و خواندن
-            read_time = time_per_section * random.uniform(0.7, 1.3)
-            await asyncio.sleep(read_time)
+            # Chance to just wait (reading)
+            await asyncio.sleep(random.uniform(3, 8))
 
-            # گاهی موس را حرکت بده
-            if random.random() < 0.6:
-                x = random.randint(100, 800)
-                y = random.randint(100, 600)
-                await page.mouse.move(x, y, steps=random.randint(5, 15))
-
-            # گاهی کمی به عقب اسکرول کن (رفتار طبیعی)
-            if random.random() < 0.25 and i > 0:
-                back_scroll = random.randint(-150, -50)
-                await page.evaluate(
-                    f"window.scrollBy({{top: {back_scroll}, behavior: 'smooth'}})"
-                )
-                await asyncio.sleep(random.uniform(0.5, 1.5))
-
-        # در پایان، شانس بازگشت به بالا
-        if random.random() < 0.3:
-            await page.evaluate("window.scrollTo({top: 0, behavior: 'smooth'})")
-            await asyncio.sleep(random.uniform(1, 2))
+            # 10% chance to look at something specific
+            if random.random() < 0.1:
+                await random_page_interactions(page)
 
     except Exception:
         pass

@@ -1,179 +1,145 @@
 from datetime import datetime
 import asyncio
 import random
-import re
-
-from playwright.async_api import Page
-from typing import List, Tuple, Dict
+from playwright.async_api import Page, ElementHandle
+from typing import List, Dict, Optional
 
 from config.crawler_settings import (
     MAX_RESULTS_TO_CHECK,
     MAX_SCROLL_ROUNDS,
-    FALLBACK_STRATEGIES,
 )
 from config.general_settings import PAGE_LOAD_TIMEOUT
 from core.logger import logger
 from core.performance_monitor import performance_monitor
 from human.captcha import handle_captcha
 from human.behavior import random_interactions
-from .fallback_extractors import (
-    extract_urls_from_text,
-    extract_urls_from_meta,
-    extract_urls_from_scripts,
-    extract_urls_from_images,
-)
 from core.utils import is_valid_url
 from .interceptors import intercept_route
 
-
-async def search_in_engine(
-    page: Page, engine_config: Dict, max_results: int = MAX_RESULTS_TO_CHECK
-) -> List[Dict]:  # ✅ تغییر: برمی‌گرداند Dict با selector
+async def perform_search(page: Page, engine_name: str, keyword: str) -> List[Dict]:
     """
-    جستجو در موتور و استخراج نتایج با اطلاعات کامل
-
-    Returns:
-        List[Dict]: لیست نتایج با format:
-        {
-            'rank': int,
-            'url': str,
-            'title': str,
-            'selector': str,  # ✅ اضافه شد
-            'element': ElementHandle  # ✅ اضافه شد
-        }
+    Performs search and handles pagination if site is not found on page 1.
     """
-    start_time = datetime.now()
+    from config.search_engines import get_search_engines
+
+    engines = get_search_engines(keyword)
+    engine_config = next((e for e in engines if e['name'].lower() == engine_name.lower()), None)
+
+    if not engine_config:
+        logger.error(f"Engine {engine_name} configuration not found.")
+        return []
+
+    results = []
+    max_pages = 3 # Look up to 3 pages
+
+    for current_page in range(1, max_pages + 1):
+        logger.info(f"🔍 Searching {engine_name} - Page {current_page} for '{keyword}'...")
+
+        page_results = await search_in_engine_page(page, engine_config, current_page)
+        results.extend(page_results)
+
+        # In a real scenario, we might want to check if the target domain is in page_results
+        # and stop if found. But for now, we return all found results.
+
+        # Handle pagination click
+        if current_page < max_pages:
+            success = await go_to_next_page(page, engine_name)
+            if not success:
+                logger.info("No more pages found or failed to navigate.")
+                break
+            await asyncio.sleep(random.uniform(3, 6))
+
+    return results
+
+async def search_in_engine_page(page: Page, engine_config: Dict, page_num: int) -> List[Dict]:
+    """Extracts results from a single page of search engine."""
     engine_name = engine_config["name"]
     url = engine_config["url"]
     selectors = engine_config["selectors"]
     exclude_domains = engine_config.get("exclude_domains", [])
 
-    logger.info(f"\n🔍 جستجو در {engine_name}...")
-    results = []
-    rank = 1
-    seen_urls = set()
-
     try:
-        await page.route("**/*", intercept_route)
+        if page_num == 1:
+            await page.route("**/*", intercept_route)
+            await page.goto(url, wait_until="networkidle", timeout=PAGE_LOAD_TIMEOUT)
 
-        # ✅ اضافه: صبر برای networkidle
-        await page.goto(url, wait_until="networkidle", timeout=PAGE_LOAD_TIMEOUT)
-        await asyncio.sleep(random.uniform(3, 5))  # ✅ تاخیر بیشتر
+        await asyncio.sleep(random.uniform(2, 4))
 
-        # ✅ اضافه: بررسی JavaScript
-        await page.evaluate("() => document.readyState")
-
-        # بررسی کپچا
+        # Check for captcha
         content_lower = (await page.content()).lower()
-        if any(
-            kw in content_lower
-            for kw in ["captcha", "robot", "unusual traffic", "verify"]
-        ):
-            performance_monitor.record_captcha()
+        if any(kw in content_lower for kw in ["captcha", "robot", "unusual traffic", "verify"]):
             if not await handle_captcha(page, engine_name):
                 return []
-            await page.goto(url, wait_until="networkidle")
-            await asyncio.sleep(3)
+            await asyncio.sleep(2)
 
-        # رفتار انسانی اولیه
         await random_interactions(page)
 
-        # یافتن سلکتور کارآمد
         working_locator = None
         working_selector = None
 
-        priority_selectors = engine_config.get("priority_selectors", [])
-        if priority_selectors:
-            for selector in priority_selectors:
-                try:
-                    await page.wait_for_selector(selector, timeout=8000)
-                    count = await page.locator(selector).count()
-                    if count > 0:
-                        working_locator = page.locator(selector)
-                        working_selector = selector
-                        logger.info(f"   ✅ سلکتور اولویت‌دار: {count} نتیجه")
-                        break
-                except Exception:
-                    continue
+        for selector in selectors:
+            try:
+                # Wait briefly
+                await page.wait_for_selector(selector, timeout=5000)
+                count = await page.locator(selector).count()
+                if count > 0:
+                    working_locator = page.locator(selector)
+                    working_selector = selector
+                    break
+            except:
+                continue
 
         if not working_locator:
-            for selector in selectors:
-                try:
-                    await page.wait_for_selector(selector, timeout=6000)
-                    count = await page.locator(selector).count()
-                    if count > 0:
-                        working_locator = page.locator(selector)
-                        working_selector = selector
-                        logger.info(f"   ✅ سلکتور عادی: {count} نتیجه")
-                        break
-                except Exception:
-                    continue
-
-        if not working_locator:
-            logger.error(f"   ❌ هیچ سلکتوری کار نکرد!")
             return []
 
-        # ✅ استخراج نتایج با اطلاعات کامل
-        for scroll_round in range(MAX_SCROLL_ROUNDS):
-            anchors = (
-                await working_locator.element_handles()
-            )  # ✅ تغییر: استفاده از element_handles
-            new_links = 0
+        results = []
+        anchors = await working_locator.element_handles()
 
-            for anchor in anchors:
-                try:
-                    href = await anchor.get_attribute("href")
-                    title = await anchor.inner_text()  # ✅ اضافه شد
+        for i, anchor in enumerate(anchors):
+            try:
+                href = await anchor.get_attribute("href")
+                title = await anchor.inner_text()
 
-                    if href and is_valid_url(href, exclude_domains):
-                        if href not in seen_urls:
-                            seen_urls.add(href)
-
-                            # ✅ ذخیره اطلاعات کامل
-                            results.append(
-                                {
-                                    "rank": rank,
-                                    "url": href,
-                                    "title": title.strip() if title else "بدون عنوان",
-                                    "selector": working_selector,
-                                    "element": anchor,  # ✅ ذخیره reference المان
-                                }
-                            )
-
-                            rank += 1
-                            new_links += 1
-
-                            if len(results) >= max_results:
-                                break
-                except Exception as e:
-                    logger.debug(f"خطا در استخراج anchor: {e}")
-                    continue
-
-            logger.debug(f"      دور {scroll_round + 1}: {new_links} لینک جدید")
-
-            if len(results) >= max_results:
-                break
-
-            # اسکرول با رفتار انسانی
-            await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-            await asyncio.sleep(random.uniform(2, 4))
-
-        logger.info(f"   ✅ {len(results)} نتیجه یافت شد")
-
-        if results:
-            logger.debug(f"   📋 نمونه نتایج:")
-            for r in results[:3]:
-                logger.debug(
-                    f"      {r['rank']}. {r['title'][:40]}... - {r['url'][:60]}..."
-                )
-
-        duration = (datetime.now() - start_time).total_seconds()
-        performance_monitor.record_search(success=True, duration=duration)
+                if href and is_valid_url(href, exclude_domains):
+                    results.append({
+                        "rank": (page_num - 1) * 10 + i + 1,
+                        "url": href,
+                        "title": title.strip() if title else "No Title",
+                        "selector": working_selector,
+                        "element": anchor,
+                    })
+            except:
+                continue
 
         return results
 
     except Exception as e:
-        logger.error(f"   ❌ خطا در {engine_name}: {e}")
-        performance_monitor.record_search(success=False)
-        performance_monitor.record_error(f"خطا در {engine_name}: {str(e)}")
+        logger.error(f"Error in {engine_name} page {page_num}: {e}")
         return []
+
+async def go_to_next_page(page: Page, engine_name: str) -> bool:
+    """Attempts to click 'Next' page button."""
+    next_selectors = {
+        "Google": "a#pnnext, a[aria-label='Next page']",
+        "Bing": "a.sb_pagN, a[title='Next page']",
+        "DuckDuckGo": "button#more-results",
+        "Yandex": "a.pager__item_kind_next",
+        "Yahoo": "a.next",
+        "Brave": "a#next-pagination",
+    }
+
+    selector = next_selectors.get(engine_name)
+    if not selector:
+        return False
+
+    try:
+        next_btn = await page.query_selector(selector)
+        if next_btn and await next_btn.is_visible():
+            logger.info(f"Moving to next page in {engine_name}...")
+            await next_btn.scroll_into_view_if_needed()
+            await asyncio.sleep(random.uniform(0.5, 1.5))
+            await next_btn.click()
+            return True
+    except:
+        pass
+    return False
