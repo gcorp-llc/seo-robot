@@ -1,4 +1,4 @@
-from .search_engine import search_in_engine
+from .search_engine import perform_search
 from .page_visit import (
     visit_page_naturally,
     visit_internal_links,
@@ -7,7 +7,7 @@ from .page_visit import (
 from .link_extractor import extract_internal_links
 
 __all__ = [
-    "search_in_engine",
+    "perform_search",
     "visit_page_naturally",
     "visit_internal_links",
     "smart_click_and_visit",
