@@ -38,3 +38,4 @@ test-results/
 # Theme
 theme/static_src/node_modules/
 theme/static/css/styles.css
+.env
