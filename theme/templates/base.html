@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <title>SEO Bot Dashboard</title>
+    <title>{% block title %}ربات SEO پیشرفته{% endblock %}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -21,42 +21,64 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 24px;
         }
-        .ios-card {
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-        }
-        .btn-ios {
-            border-radius: 12px;
-            transition: all 0.2s;
-        }
-        .btn-ios:active {
-            transform: scale(0.95);
+        .ios-card { box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07); }
+        .btn-ios { border-radius: 12px; transition: all 0.2s; }
+        .btn-ios:active { transform: scale(0.95); }
+        .progress-bar { transition: width 0.6s ease; }
+        /* اعداد فارسی */
+        .num-fa { font-feature-settings: "ss01"; }
+        @media (prefers-reduced-motion: reduce) {
+            .progress-bar { transition: none; }
         }
     </style>
 </head>
 
 <body class="p-4 md:p-8">
     <div class="max-w-6xl mx-auto">
-        <header class="flex justify-between items-center mb-10 glass p-6 ios-card">
+        <header class="flex flex-wrap justify-between items-center gap-4 mb-10 glass p-6 ios-card">
             <div>
                 <h1 class="text-3xl font-bold text-gray-800">ربات SEO پیشرفته</h1>
                 <p class="text-gray-500">مدیریت هوشمند بازدید و رتبه سایت</p>
             </div>
-            <div class="flex gap-4">
-                <a href="/admin/" class="btn btn-ghost btn-ios">پنل مدیریت</a>
-                <div class="avatar online placeholder">
-                    <div class="bg-neutral text-neutral-content rounded-full w-12">
-                        <span>AD</span>
-                    </div>
-                </div>
-            </div>
+            <nav class="flex items-center gap-2 flex-wrap" aria-label="منوی اصلی">
+                <a href="{% url 'dashboard' %}"
+                   class="btn btn-sm btn-ios {% if request.resolver_match.url_name == 'dashboard' %}btn-primary{% else %}btn-ghost{% endif %}">داشبورد</a>
+                <a href="{% url 'job_list' %}"
+                   class="btn btn-sm btn-ios {% if 'job' in request.resolver_match.url_name %}btn-primary{% else %}btn-ghost{% endif %}">عملیات‌ها</a>
+                <a href="{% url 'proxy_list' %}"
+                   class="btn btn-sm btn-ios {% if 'proxy' in request.resolver_match.url_name %}btn-primary{% else %}btn-ghost{% endif %}">پروکسی‌ها</a>
+                <a href="/admin/" class="btn btn-sm btn-ghost btn-ios">تنظیمات پیشرفته</a>
+                {% if user.is_authenticated %}
+                <form method="post" action="{% url 'admin:logout' %}" class="inline">{% csrf_token %}
+                    <button type="submit" class="btn btn-sm btn-ghost btn-ios text-error">خروج ({{ user.get_username }})</button>
+                </form>
+                {% else %}
+                <a href="{% url 'admin:login' %}" class="btn btn-sm btn-primary btn-ios">ورود</a>
+                {% endif %}
+            </nav>
         </header>
+
+        {% if messages %}
+        <div class="space-y-2 mb-6" role="status" aria-live="polite">
+            {% for message in messages %}
+            <div class="alert alert-sm py-2 px-4 rounded-2xl
+                {% if message.tags == 'success' %}alert-success
+                {% elif message.tags == 'error' %}alert-error
+                {% elif message.tags == 'warning' %}alert-warning
+                {% else %}alert-info{% endif %} shadow-lg">
+                <span>{{ message }}</span>
+                <button class="btn btn-xs btn-ghost ms-auto" onclick="this.parentElement.remove()" aria-label="بستن">✕</button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
 
         <main>
             {% block content %}{% endblock %}
         </main>
 
         <footer class="mt-20 text-center text-gray-500 pb-10">
-            <p>© 2025 طراحی شده با سبک iOS 18</p>
+            <p>© ۲۰۲۵ — پنل مدیریت ربات SEO، طراحی‌شده با سبک iOS 18</p>
         </footer>
     </div>
 
