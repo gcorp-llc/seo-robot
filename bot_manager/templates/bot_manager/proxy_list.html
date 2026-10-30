@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}پروکسی‌ها — ربات SEO{% endblock %}
+
+{% block content %}
+<div class="glass p-6 ios-card mb-6">
+    <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+        <h2 class="text-2xl font-semibold">مدیریت پروکسی‌ها</h2>
+        <div class="flex gap-2 flex-wrap">
+            <form method="post" action="{% url 'proxy_check' %}">{% csrf_token %}
+                <button type="submit" class="btn btn-sm btn-ios">🩺 تست سلامت همه</button>
+            </form>
+            <form method="post" action="{% url 'proxy_sync' %}">{% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.path }}">
+                <button type="submit" class="btn btn-sm btn-primary btn-ios">⟳ همگام‌سازی از منابع</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="stats w-full bg-transparent mb-4">
+        <div class="stat">
+            <div class="stat-title">کل پروکسی‌ها</div>
+            <div class="stat-value text-2xl">{{ proxies_count }}</div>
+        </div>
+        <div class="stat">
+            <div class="stat-title">فعال</div>
+            <div class="stat-value text-2xl text-success">{{ active_proxies }}</div>
+        </div>
+        <div class="stat">
+            <div class="stat-title">منابع همگام‌سازی</div>
+            <div class="stat-value text-2xl">{{ sources|length }}</div>
+        </div>
+    </div>
+
+    <form method="get" class="flex gap-2 flex-wrap mb-4">
+        <input type="text" name="q" value="{{ current_q }}" placeholder="جستجو در آدرس پروکسی..."
+               class="input input-bordered input-sm rounded-2xl flex-grow max-w-xs">
+        <select name="state" class="select select-bordered select-sm rounded-2xl w-36" onchange="this.form.submit()">
+            <option value="">همه</option>
+            <option value="active" {% if current_state == 'active' %}selected{% endif %}>فقط فعال</option>
+            <option value="inactive" {% if current_state == 'inactive' %}selected{% endif %}>فقط غیرفعال</option>
+        </select>
+        <button type="submit" class="btn btn-sm btn-ios">اعمال فیلتر</button>
+    </form>
+
+    <div class="overflow-x-auto max-h-[60vh]">
+        <table class="table table-zebra w-full">
+            <thead class="sticky top-0">
+                <tr>
+                    <th>آدرس</th>
+                    <th>وضعیت</th>
+                    <th>کد پاسخ</th>
+                    <th>تاخیر</th>
+                    <th>آخرین بررسی</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for proxy in proxies %}
+                <tr>
+                    <td class="text-xs font-mono truncate max-w-[280px]" dir="ltr">{{ proxy.url }}</td>
+                    <td>
+                        {% if proxy.is_active %}<span class="badge badge-success badge-sm">فعال</span>
+                        {% else %}<span class="badge badge-error badge-sm">غیرفعال</span>{% endif %}
+                    </td>
+                    <td class="text-xs">{{ proxy.status_code|default:"—" }}</td>
+                    <td class="text-xs">{{ proxy.latency_ms|default:"—" }} ms</td>
+                    <td class="text-xs">{{ proxy.last_checked|date:"Y/m/d H:i"|default:"بررسی نشده" }}</td>
+                    <td>
+                        <form method="post" action="{% url 'proxy_toggle' proxy.id %}">{% csrf_token %}
+                            <button type="submit" class="btn btn-xs btn-ghost btn-ios">
+                                {% if proxy.is_active %}غیرفعال کردن{% else %}فعال کردن{% endif %}
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="6" class="text-center text-gray-400 py-8">پروکسی‌ای یافت نشد. با دکمه «همگام‌سازی از منابع» آن‌ها را دریافت کنید.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if is_paginated %}
+    <div class="flex justify-center mt-6">
+        <div class="join">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}&q={{ current_q }}&state={{ current_state }}" class="join-item btn btn-sm">قبلی</a>
+            {% endif %}
+            <button class="join-item btn btn-sm btn-active btn-ghost">{{ page_obj.number }} / {{ paginator.num_pages }}</button>
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&q={{ current_q }}&state={{ current_state }}" class="join-item btn btn-sm">بعدی</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<div class="glass p-6 ios-card">
+    <h3 class="text-lg font-semibold mb-3">منابع پروکسی</h3>
+    <ul class="space-y-2 text-sm">
+        {% for source in sources %}
+        <li class="flex justify-between items-center gap-2 border-b border-gray-100 pb-2">
+            <span class="truncate font-mono text-xs" dir="ltr">{{ source.url }}</span>
+            <span class="text-xs text-gray-400 shrink-0">آخرین همگام‌سازی: {{ source.last_sync|timesince }} پیش</span>
+        </li>
+        {% empty %}
+        <li class="text-gray-400">منبعی تعریف نشده است. از بخش «تنظیمات پیشرفته → منابع پروکسی» لینک دریافت لیست را اضافه کنید.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

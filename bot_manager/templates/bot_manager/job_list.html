@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}عملیات‌ها — ربات SEO{% endblock %}
+
+{% block content %}
+<div class="glass p-6 ios-card">
+    <div class="flex flex-wrap justify-between items-center gap-3 mb-6">
+        <h2 class="text-2xl font-semibold">لیست عملیات‌های ربات</h2>
+        <div class="join">
+            <a href="{% url 'job_list' %}" class="join-item btn btn-sm {% if not current_status %}btn-active{% endif %}">همه</a>
+            <a href="?status=pending" class="join-item btn btn-sm {% if current_status == 'pending' %}btn-active{% endif %}">در انتظار</a>
+            <a href="?status=running" class="join-item btn btn-sm {% if current_status == 'running' %}btn-active{% endif %}">در حال اجرا</a>
+            <a href="?status=completed" class="join-item btn btn-sm {% if current_status == 'completed' %}btn-active{% endif %}">موفق</a>
+            <a href="?status=failed" class="join-item btn btn-sm {% if current_status == 'failed' %}btn-active{% endif %}">ناموفق</a>
+        </div>
+    </div>
+
+    <div class="overflow-x-auto">
+        <table class="table w-full">
+            <thead>
+                <tr>
+                    <th>سایت</th>
+                    <th>وضعیت</th>
+                    <th>پیشرفت</th>
+                    <th>مرحله فعلی</th>
+                    <th>شروع</th>
+                    <th>مدت</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for job in jobs %}
+                <tr class="hover cursor-pointer" onclick="window.location='{% url 'job_detail' job.id %}'">
+                    <td class="font-medium">{{ job.site.name }}</td>
+                    <td>
+                        <span class="badge badge-sm {% if job.status == 'completed' %}badge-success{% elif job.status == 'running' %}badge-info{% elif job.status == 'failed' %}badge-error{% else %}badge-ghost{% endif %}">
+                            {{ job.get_status_display }}
+                        </span>
+                    </td>
+                    <td>
+                        <div class="flex items-center gap-2 min-w-[120px]">
+                            <progress class="progress progress-primary w-24 h-2" value="{{ job.progress }}" max="100"></progress>
+                            <span class="text-xs text-gray-500">{{ job.progress }}%</span>
+                        </div>
+                    </td>
+                    <td class="text-xs text-gray-500 max-w-[200px] truncate">{{ job.current_step }}</td>
+                    <td class="text-xs">{{ job.started_at|date:"Y/m/d H:i" }}</td>
+                    <td class="text-xs">{% if job.duration_seconds %}{{ job.duration_seconds }} ثانیه{% else %}—{% endif %}</td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="6" class="text-center text-gray-400 py-8">عملیاتی یافت نشد.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% if is_paginated %}
+    <div class="flex justify-center mt-6">
+        <div class="join">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}{% if current_status %}&status={{ current_status }}{% endif %}" class="join-item btn btn-sm">قبلی</a>
+            {% endif %}
+            <button class="join-item btn btn-sm btn-active btn-ghost">صفحه {{ page_obj.number }} از {{ paginator.num_pages }}</button>
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if current_status %}&status={{ current_status }}{% endif %}" class="join-item btn btn-sm">بعدی</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

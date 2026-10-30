@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}عملیات #{{ job.id }} — {{ job.site.name }}{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+    <div class="glass p-6 ios-card">
+        <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+            <div>
+                <h2 class="text-2xl font-semibold">{{ job.site.name }}</h2>
+                <p class="text-sm text-gray-500">عملیات شماره {{ job.id }} — شروع: {{ job.started_at|date:"Y/m/d H:i:s" }}</p>
+            </div>
+            <span id="status-badge" class="badge badge-lg {% if job.status == 'completed' %}badge-success{% elif job.status == 'running' %}badge-info{% elif job.status == 'failed' %}badge-error{% else %}badge-ghost{% endif %}">
+                {{ job.get_status_display }}
+            </span>
+        </div>
+
+        <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+            <div id="live-progress" class="bg-blue-600 h-4 rounded-full progress-bar" style="width: {{ job.progress }}%"></div>
+        </div>
+        <div class="flex justify-between text-sm text-gray-500">
+            <span id="live-step">{{ job.current_step }}</span>
+            <span id="live-pct">{{ job.progress }}%</span>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6 text-sm">
+            <div><span class="text-gray-400 block">پایان</span>{{ job.finished_at|date:"Y/m/d H:i"|default:"—" }}</div>
+            <div><span class="text-gray-400 block">مدت زمان</span>{% if job.duration_seconds %}{{ job.duration_seconds }} ثانیه{% else %}—{% endif %}</div>
+            <div><span class="text-gray-400 block">آدرس سایت</span><a href="{{ job.site.main_url }}" target="_blank" rel="noopener" class="link link-primary truncate max-w-[180px] inline-block" dir="ltr">{{ job.site.main_url }}</a></div>
+            <div><a href="{% url 'job_list' %}" class="link">→ بازگشت به لیست</a></div>
+        </div>
+    </div>
+
+    <div class="glass p-6 ios-card">
+        <h3 class="text-lg font-semibold mb-4">لاگ اجرای عملیات</h3>
+        <pre id="live-log" dir="ltr" class="text-left whitespace-pre-wrap break-all bg-gray-900 text-green-300 rounded-2xl p-4 text-xs leading-relaxed max-h-[500px] overflow-y-auto font-mono">{% if job.log %}{{ job.log }}{% else %}(هنوز لاگی ثبت نشده است){% endif %}</pre>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // بروزرسانی زنده وضعیت، پیشرفت و لاگ تا زمانی که عملیات فعال است
+    (function () {
+        const jobId = {{ job.id }};
+        let status = "{{ job.status }}";
+        const logBox = document.getElementById('live-log');
+
+        async function refresh() {
+            if (!['pending', 'running'].includes(status)) return;
+            try {
+                const res = await fetch(`/job-status/${jobId}/`, { credentials: 'same-origin' });
+                const data = await res.json();
+                status = data.status;
+                document.getElementById('live-progress').style.width = data.progress + '%';
+                document.getElementById('live-pct').innerText = data.progress + '%';
+                document.getElementById('live-step').innerText = data.current_step;
+                const badge = document.getElementById('status-badge');
+                badge.innerText = data.status_display;
+                badge.className = 'badge badge-lg ' + ({
+                    completed: 'badge-success', running: 'badge-info',
+                    failed: 'badge-error', pending: 'badge-ghost'
+                }[data.status] || 'badge-ghost');
+
+                if (data.finished) setTimeout(() => location.reload(), 1500);
+            } catch (e) { /* noop */ }
+        }
+
+        const timer = setInterval(refresh, 4000);
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) clearInterval(timer);
+            else { refresh(); setInterval(refresh, 4000); }
+        });
+
+        // اسکرول خودکار لاگ به پایین
+        logBox.scrollTop = logBox.scrollHeight;
+    })();
+</script>
+{% endblock %}

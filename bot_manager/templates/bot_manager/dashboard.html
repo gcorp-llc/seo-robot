@@ -1,24 +1,72 @@
 {% extends "base.html" %}
 
+{% block title %}داشبورد — ربات SEO{% endblock %}
+
 {% block content %}
+<!-- کارت‌های آمار -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="glass p-5 ios-card text-center">
+        <div class="text-xs text-gray-500 mb-1">پروکسی فعال</div>
+        <div class="text-2xl font-bold text-primary">{{ active_proxies }}<span class="text-sm text-gray-400">/{{ proxies_count }}</span></div>
+    </div>
+    <div class="glass p-5 ios-card text-center">
+        <div class="text-xs text-gray-500 mb-1">سایت‌های هدف</div>
+        <div class="text-2xl font-bold">{{ sites|length }}</div>
+    </div>
+    <div class="glass p-5 ios-card text-center">
+        <div class="text-xs text-gray-500 mb-1">در حال اجرا</div>
+        <div class="text-2xl font-bold text-info">{{ running_total }}</div>
+    </div>
+    <div class="glass p-5 ios-card text-center">
+        <div class="text-xs text-gray-500 mb-1">موفق / ناموفق (کل)</div>
+        <div class="text-2xl font-bold"><span class="text-success">{{ completed_total }}</span><span class="text-gray-300 mx-1">/</span><span class="text-error">{{ failed_total }}</span></div>
+    </div>
+</div>
+
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <!-- Stats Column -->
+    <!-- ستون کناری -->
     <div class="md:col-span-1 space-y-6">
         <div class="glass p-6 ios-card">
             <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-semibold">وضعیت کلی</h2>
-                <button onclick="syncProxies()" class="btn btn-ghost btn-xs btn-ios">همگام‌سازی پروکسی</button>
+                <h2 class="text-xl font-semibold">سلامت سیستم</h2>
             </div>
-            <div class="stats stats-vertical shadow w-full bg-transparent">
-                <div class="stat">
-                    <div class="stat-title">پروکسی‌های فعال</div>
-                    <div class="stat-value text-primary">{{ active_proxies }}/{{ proxies_count }}</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-title">سایت‌های هدف</div>
-                    <div class="stat-value">{{ sites.count }}</div>
+            <ul class="space-y-3 text-sm">
+                <li class="flex justify-between">
+                    <span class="text-gray-500">ورکرهای صف</span>
+                    <span>{{ queue_info.workers }} نفر</span>
+                </li>
+                <li class="flex justify-between">
+                    <span class="text-gray-500">تسک در صف</span>
+                    <span>{% if queue_info.queued is not None %}{{ queue_info.queued }}{% else %}—{% endif %}</span>
+                </li>
+                <li class="flex justify-between">
+                    <span class="text-gray-500">موفق (۲۴ ساعت)</span>
+                    <span class="text-success">{% if queue_info.success is not None %}{{ queue_info.success }}{% else %}—{% endif %}</span>
+                </li>
+                <li class="flex justify-between">
+                    <span class="text-gray-500">ناموفق (۲۴ ساعت)</span>
+                    <span class="text-error">{% if queue_info.failed is not None %}{{ queue_info.failed }}{% else %}—{% endif %}</span>
+                </li>
+                {% if queue_info.queued == 0 and running_total == 0 %}
+                <li class="text-warning text-xs mt-2">⚠️ اگر تسک‌ها اجرا نمی‌شوند، مطمئن شوید ورکر با دستور <code dir="ltr">python manage.py qcluster</code> در حال اجراست.</li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="glass p-6 ios-card">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">پروکسی‌ها</h2>
+                <div class="flex gap-2">
+                    <form method="post" action="{% url 'proxy_check' %}">{% csrf_token %}
+                        <button type="submit" class="btn btn-ghost btn-xs btn-ios" title="بررسی سلامت پروکسی‌های فعال">تست سلامت</button>
+                    </form>
+                    <form method="post" action="{% url 'proxy_sync' %}">{% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.path }}">
+                        <button type="submit" class="btn btn-ghost btn-xs btn-ios">همگام‌سازی</button>
+                    </form>
                 </div>
             </div>
+            <a href="{% url 'proxy_list' %}" class="link link-primary text-sm">مشاهده و مدیریت پروکسی‌ها ←</a>
         </div>
 
         <div class="glass p-6 ios-card">
@@ -33,33 +81,48 @@
                     <span class="badge badge-ghost badge-sm">غیرفعال</span>
                     {% endif %}
                 </div>
+                {% empty %}
+                <p class="text-sm text-gray-400">موتوری تعریف نشده. از بخش تنظیمات پیشرفته اضافه کنید.</p>
                 {% endfor %}
             </div>
         </div>
     </div>
 
-    <!-- Main Content Column -->
+    <!-- ستون اصلی -->
     <div class="md:col-span-2 space-y-6">
         <div class="glass p-6 ios-card">
-            <h2 class="text-xl font-semibold mb-4">سایت‌های هدف</h2>
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">سایت‌های هدف</h2>
+                <a href="/admin/bot_manager/siteconfig/" class="btn btn-ghost btn-xs btn-ios">+ افزودن سایت</a>
+            </div>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
                         <tr>
                             <th>نام سایت</th>
-                            <th>آدرس</th>
+                            <th>کلمات کلیدی</th>
+                            <th>لینک‌های کشف‌شده</th>
                             <th>عملیات</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for site in sites %}
-                        <tr>
-                            <td>{{ site.name }}</td>
-                            <td class="text-sm text-gray-500">{{ site.main_url }}</td>
+                        <tr class="hover">
                             <td>
-                                <a href="{% url 'start_bot' site.id %}" class="btn btn-primary btn-sm btn-ios">شروع عملیات</a>
+                                <div class="font-medium">{{ site.name }}</div>
+                                <div class="text-xs text-gray-500 truncate max-w-[220px]" dir="ltr">{{ site.main_url }}</div>
+                            </td>
+                            <td><span class="badge badge-outline badge-sm">{{ site.keywords_count }}</span></td>
+                            <td><span class="badge badge-ghost badge-sm">{{ site.visited_count }}/{{ site.links_count }}</span></td>
+                            <td>
+                                <form method="post" action="{% url 'start_bot' site.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary btn-sm btn-ios">▶ شروع عملیات</button>
+                                </form>
                             </td>
                         </tr>
+                        {% empty %}
+                        <tr><td colspan="4" class="text-center text-gray-400 py-6">هنوز سایتی تعریف نشده است. برای افزودن به بخش تنظیمات پیشرفته بروید.</td></tr>
                         {% endfor %}
                     </tbody>
                 </table>
@@ -67,17 +130,20 @@
         </div>
 
         <div class="glass p-6 ios-card">
-            <h2 class="text-xl font-semibold mb-4">آخرین عملیات‌ها</h2>
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">آخرین عملیات‌ها</h2>
+                <a href="{% url 'job_list' %}" class="link link-primary text-sm">همه عملیات‌ها</a>
+            </div>
             <div class="space-y-4">
                 {% for job in jobs %}
-                <div class="p-4 border border-gray-100 rounded-2xl bg-white bg-opacity-40" id="job-{{ job.id }}">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-medium">{{ job.site.name }}</span>
+                <div class="p-4 border border-gray-100 rounded-2xl bg-white bg-opacity-40" id="job-{{ job.id }}" data-status="{{ job.status }}">
+                    <div class="flex justify-between items-center mb-2 gap-2 flex-wrap">
+                        <a href="{% url 'job_detail' job.id %}" class="font-medium hover:underline">{{ job.site.name }}</a>
                         <span class="badge {% if job.status == 'completed' %}badge-success{% elif job.status == 'running' %}badge-info{% elif job.status == 'failed' %}badge-error{% else %}badge-ghost{% endif %} status-text">
                             {{ job.get_status_display }}
                         </span>
                     </div>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2" role="progressbar" aria-valuenow="{{ job.progress }}" aria-valuemin="0" aria-valuemax="100">
                         <div class="bg-blue-600 h-2.5 rounded-full progress-bar" style="width: {{ job.progress }}%"></div>
                     </div>
                     <div class="flex justify-between text-xs text-gray-500">
@@ -86,7 +152,7 @@
                     </div>
                 </div>
                 {% empty %}
-                <p class="text-center text-gray-400 py-4">هنوز هیچ عملیاتی انجام نشده است.</p>
+                <p class="text-center text-gray-400 py-4">هنوز هیچ عملیاتی انجام نشده است. با دکمه «شروع عملیات» اولین اجرا را ثبت کنید.</p>
                 {% endfor %}
             </div>
         </div>
@@ -96,34 +162,49 @@
 
 {% block extra_js %}
 <script>
-    // Simple polling for job status
-    function updateJobs() {
-        const runningJobs = document.querySelectorAll('.badge-info');
-        runningJobs.forEach(badge => {
-            const jobId = badge.closest('[id^="job-"]').id.split('-')[1];
-            fetch(`/job-status/${jobId}/`)
-                .then(response => response.json())
-                .then(data => {
-                    const jobElem = document.getElementById(`job-${jobId}`);
-                    jobElem.querySelector('.status-text').innerText = data.status;
-                    jobElem.querySelector('.progress-bar').style.width = data.progress + '%';
-                    jobElem.querySelector('.step-text').innerText = data.current_step;
+    // Polling هوشمند: فقط وقتی عملیات فعالی وجود دارد درخواست بزنیم
+    (function () {
+        const POLL_INTERVAL = 4000;
+        let reloadTimer = null;
+
+        function activeJobCards() {
+            return [...document.querySelectorAll('[id^="job-"]')]
+                .filter(el => ['pending', 'running'].includes(el.dataset.status));
+        }
+
+        async function updateJobs() {
+            const cards = activeJobCards();
+            if (!cards.length) return;
+
+            for (const card of cards) {
+                const jobId = card.id.split('-')[1];
+                try {
+                    const res = await fetch(`/job-status/${jobId}/`, { credentials: 'same-origin' });
+                    if (!res.ok) continue;
+                    const data = await res.json();
+
+                    card.querySelector('.status-text').innerText = data.status_display;
+                    card.querySelector('.progress-bar').style.width = data.progress + '%';
+                    card.querySelector('.step-text').innerText = data.current_step;
+                    card.dataset.status = data.status;
 
                     if (data.finished) {
-                        location.reload(); // Refresh to update badges and order
+                        const badge = card.querySelector('.status-text');
+                        badge.className = 'badge status-text ' + (data.status === 'completed' ? 'badge-success' : 'badge-error');
+                        // یک بار رفرش سبک بعد از اتمام همه عملیات‌ها
+                        clearTimeout(reloadTimer);
+                        reloadTimer = setTimeout(() => location.reload(), 2500);
                     }
-                });
+                } catch (e) { /* خطای شبکه را نادیده بگیر */ }
+            }
+        }
+
+        setInterval(updateJobs, POLL_INTERVAL);
+
+        // توقف polling وقتی تب فعال نیست (کاهش مصرف منابع)
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) updateJobs();
         });
-    }
-
-    setInterval(updateJobs, 3000);
-
-    function syncProxies() {
-        fetch("{% url 'proxy_sync' %}")
-            .then(response => response.json())
-            .then(data => {
-                alert(data.message);
-            });
-    }
+    })();
 </script>
 {% endblock %}
